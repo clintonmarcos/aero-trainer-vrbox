@@ -827,6 +827,8 @@ const aircrafts = [
 
 const canvas = document.querySelector("#sceneCanvas");
 const ctx = canvas.getContext("2d");
+const homeLogoImage = new Image();
+homeLogoImage.src = "assets/brand/masterfly-logo.jpg";
 
 const els = {
   aircraftList: document.querySelector("#aircraftList"),
@@ -1105,17 +1107,16 @@ function drawPanorama(x, y, width, height, eyeOffset) {
   const content = currentContent();
   const home = !activeAircraft;
 
+  if (home) {
+    drawHomeBackground(x, y, width, height);
+    drawHomeGraphic(x, y, width, height);
+    return;
+  }
+
   if (panoramaImage) {
     drawEquirectangular(panoramaImage, x, y, width, height, eyeOffset);
   } else {
     drawPlaceholderPanorama(x, y, width, height, eyeOffset);
-  }
-
-  if (home) {
-    ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
-    ctx.fillRect(x, y, width, height);
-    drawHomeGraphic(x, y, width, height);
-    return;
   }
 
   if (isTechnicalContent(content) || isSoonContent(content)) {
@@ -1263,7 +1264,7 @@ function drawHomeGraphic(x, y, width, height) {
   ctx.lineWidth = 3;
   ctx.stroke();
 
-  drawMiniAircraft(0, -52, 0.9);
+  drawTrainerVisitIcon(0, -52, 0.9);
 
   ctx.fillStyle = "#f4f7f8";
   ctx.font = "900 58px system-ui";
@@ -1272,47 +1273,63 @@ function drawHomeGraphic(x, y, width, height) {
   ctx.fillStyle = "#d8e4e7";
   ctx.font = "600 24px system-ui";
   ctx.fillText("Selecione uma aeronave para iniciar", 0, 122);
-
   ctx.restore();
 }
 
-function drawMiniAircraft(cx, cy, scale) {
+function drawHomeBackground(x, y, width, height) {
+  ctx.fillStyle = "#030405";
+  ctx.fillRect(x, y, width, height);
+
+  if (!homeLogoImage.complete || !homeLogoImage.naturalWidth) {
+    return;
+  }
+
+  const imageRatio = homeLogoImage.naturalWidth / homeLogoImage.naturalHeight;
+  const targetRatio = width / height;
+  let drawWidth = width;
+  let drawHeight = height;
+
+  if (imageRatio > targetRatio) {
+    drawHeight = height;
+    drawWidth = height * imageRatio;
+  } else {
+    drawWidth = width;
+    drawHeight = width / imageRatio;
+  }
+
+  const dx = x + (width - drawWidth) / 2;
+  const dy = y + (height - drawHeight) / 2;
+  ctx.globalAlpha = 0.42;
+  ctx.drawImage(homeLogoImage, dx, dy, drawWidth, drawHeight);
+  ctx.globalAlpha = 1;
+  ctx.fillStyle = "rgba(0, 0, 0, 0.48)";
+  ctx.fillRect(x, y, width, height);
+}
+
+function drawTrainerVisitIcon(cx, cy, scale) {
   ctx.save();
   ctx.translate(cx, cy);
   ctx.scale(scale, scale);
-  ctx.fillStyle = "#e8eef0";
-  ctx.strokeStyle = "#101316";
-  ctx.lineWidth = 4;
-  roundedPath([
-    [-150, -8],
-    [-92, -32],
-    [88, -28],
-    [158, -10],
-    [142, 10],
-    [-110, 18]
-  ]);
+  ctx.strokeStyle = "#f2b84b";
+  ctx.fillStyle = "rgba(242, 184, 75, 0.12)";
+  ctx.lineWidth = 5;
+  roundRect(-108, -58, 216, 116, 18);
   ctx.fill();
   ctx.stroke();
-  ctx.fillStyle = "#40c4a4";
-  ctx.fillRect(-118, 5, 235, 8);
-  ctx.fillStyle = "#d8e4e7";
-  roundedPath([
-    [-45, -30],
-    [-175, -70],
-    [95, -68],
-    [175, -32]
-  ]);
+  ctx.fillStyle = "#f2b84b";
+  ctx.beginPath();
+  ctx.moveTo(-18, -30);
+  ctx.lineTo(54, 0);
+  ctx.lineTo(-18, 30);
+  ctx.closePath();
   ctx.fill();
+  ctx.strokeStyle = "rgba(216, 228, 231, 0.85)";
+  ctx.beginPath();
+  ctx.arc(-132, 0, 34, -1.1, 1.1);
   ctx.stroke();
-  ctx.fillStyle = "#d8e4e7";
-  roundedPath([
-    [104, -18],
-    [172, -62],
-    [178, -14]
-  ]);
-  ctx.fill();
+  ctx.beginPath();
+  ctx.arc(132, 0, 34, Math.PI - 1.1, Math.PI + 1.1);
   ctx.stroke();
-  drawPropeller(-162, 0, 58);
   ctx.restore();
 }
 
