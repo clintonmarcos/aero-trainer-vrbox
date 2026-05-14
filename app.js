@@ -884,6 +884,7 @@ function enterVrMode() {
   document.documentElement.requestFullscreen?.().catch(() => {});
   screen.orientation?.lock?.("landscape").catch(() => {});
   armVrHistory();
+  startGyroscope();
 }
 
 function exitVrMode(options = {}) {
