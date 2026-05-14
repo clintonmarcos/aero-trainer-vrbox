@@ -308,6 +308,7 @@ let gyroEnabled = false;
 let gyroBase = null;
 let yaw = 0.5;
 let pitch = 0;
+let vrHistoryArmed = false;
 let dragStart = null;
 let lastPointer = null;
 let panoramaImage = null;
@@ -368,6 +369,12 @@ function selectContent() {
   renderChecklist();
   loadPanorama();
   updateHud();
+}
+
+function goToTrainingHome() {
+  activeModule = modules[0];
+  activeStageIndex = 0;
+  selectContent();
 }
 
 function renderChecklist() {
@@ -863,11 +870,51 @@ function setViewMode(mode) {
 }
 
 function toggleVrMode() {
-  isVrMode = !isVrMode;
-  document.body.classList.toggle("vr-mode", isVrMode);
-  els.vrBtn.textContent = isVrMode ? "Sair do VR Box" : "Modo VR Box";
   if (isVrMode) {
-    document.documentElement.requestFullscreen?.().catch(() => {});
+    exitVrMode();
+  } else {
+    enterVrMode();
+  }
+}
+
+function enterVrMode() {
+  isVrMode = !isVrMode;
+  document.body.classList.add("vr-mode");
+  els.vrBtn.textContent = "Sair do VR Box";
+  document.documentElement.requestFullscreen?.().catch(() => {});
+  screen.orientation?.lock?.("landscape").catch(() => {});
+  armVrHistory();
+}
+
+function exitVrMode(options = {}) {
+  if (!isVrMode) return;
+  isVrMode = false;
+  document.body.classList.remove("vr-mode");
+  els.vrBtn.textContent = "Modo VR Box";
+  if (gyroEnabled) stopGyroscope();
+  if (document.fullscreenElement) {
+    document.exitFullscreen?.().catch(() => {});
+  }
+  screen.orientation?.unlock?.();
+  if (options.home) {
+    goToTrainingHome();
+  }
+}
+
+function armVrHistory() {
+  if (vrHistoryArmed) return;
+  vrHistoryArmed = true;
+  history.pushState({ aeroTrainerVr: true }, "", location.href);
+}
+
+function disarmVrHistory() {
+  vrHistoryArmed = false;
+}
+
+function handleBrowserBack() {
+  if (isVrMode || vrHistoryArmed) {
+    exitVrMode({ home: true });
+    disarmVrHistory();
   }
 }
 
@@ -918,18 +965,51 @@ function toggleGyroscope() {
 
 function handleDeviceOrientation(event) {
   if (!gyroEnabled || activeView !== "360") return;
-  if (event.alpha == null && event.beta == null) return;
+  if (event.alpha == null && event.beta == null && event.gamma == null) return;
 
   const alpha = event.alpha || 0;
   const beta = event.beta || 0;
+  const gamma = event.gamma || 0;
   if (!gyroBase) {
-    gyroBase = { alpha, beta, yaw, pitch };
+    gyroBase = { alpha, beta, gamma, yaw, pitch };
   }
 
   const alphaDelta = shortestDegreeDelta(alpha, gyroBase.alpha);
-  const betaDelta = beta - gyroBase.beta;
+  const verticalDelta = getVerticalOrientationDelta(beta, gamma);
   yaw = wrap01(gyroBase.yaw - alphaDelta / 360);
-  pitch = clamp(gyroBase.pitch + betaDelta / 170, -0.34, 0.34);
+  pitch = clamp(gyroBase.pitch + verticalDelta / 150, -0.34, 0.34);
+}
+
+function getVerticalOrientationDelta(beta, gamma) {
+  const angle = getScreenAngle();
+  const betaDelta = beta - gyroBase.beta;
+  const gammaDelta = gamma - gyroBase.gamma;
+
+  if (Math.abs(angle) === 90) {
+    return angle > 0 ? gammaDelta : -gammaDelta;
+  }
+
+  if (Math.abs(betaDelta) < 1 && Math.abs(gammaDelta) > 1) {
+    return gammaDelta;
+  }
+
+  return betaDelta;
+}
+
+function getScreenAngle() {
+  if (screen.orientation && typeof screen.orientation.angle === "number") {
+    return normalizeScreenAngle(screen.orientation.angle);
+  }
+  if (typeof window.orientation === "number") {
+    return normalizeScreenAngle(window.orientation);
+  }
+  return 0;
+}
+
+function normalizeScreenAngle(angle) {
+  if (angle === 270) return -90;
+  if (angle === -270) return 90;
+  return angle;
 }
 
 function showSystemMessage(title, text) {
@@ -993,8 +1073,10 @@ els.resetViewBtn.addEventListener("click", () => {
 });
 
 window.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && isVrMode) toggleVrMode();
+  if (event.key === "Escape" && isVrMode) exitVrMode();
 });
+
+window.addEventListener("popstate", handleBrowserBack);
 
 function drawLabel(x, y, text) {
   ctx.fillStyle = "rgba(9,11,13,0.72)";
