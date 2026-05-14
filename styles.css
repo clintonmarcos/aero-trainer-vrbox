@@ -277,6 +277,48 @@ button {
   pointer-events: none;
 }
 
+.technical-mode .detail-panel {
+  display: none;
+}
+
+.technical-mode .workspace {
+  grid-template-columns: minmax(210px, 280px) minmax(0, 1fr);
+}
+
+.technical-mode .hud,
+.technical-mode .vr-hud {
+  display: none;
+}
+
+.technical-overlay {
+  position: absolute;
+  inset: 5vh 6vw;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px;
+  border-radius: 8px;
+  background: rgba(9, 11, 13, 0.74);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.technical-overlay h2 {
+  margin: 0 0 14px;
+  font-size: clamp(1.3rem, 2.8vw, 2rem);
+  letter-spacing: 0;
+}
+
+.technical-overlay-text {
+  max-height: calc(90vh - 118px);
+  overflow: auto;
+  white-space: pre-line;
+  color: #d9e3e7;
+  line-height: 1.55;
+  padding-right: 8px;
+}
+
 .vr-hud {
   position: absolute;
   inset: auto 0 14px;
@@ -388,6 +430,12 @@ button {
   white-space: pre-line;
 }
 
+#detailText {
+  max-height: 58vh;
+  overflow: auto;
+  padding-right: 4px;
+}
+
 .checklist {
   display: grid;
   gap: 8px;
@@ -424,6 +472,10 @@ body.vr-mode .viewer {
   width: 100vw;
   height: 100vh;
   min-height: 100vh;
+}
+
+body.vr-mode.technical-mode .workspace {
+  grid-template-columns: 1fr;
 }
 
 body.vr-mode .hud {
