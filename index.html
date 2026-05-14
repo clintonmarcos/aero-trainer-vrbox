@@ -23,17 +23,30 @@
       </header>
 
       <main class="workspace">
-        <aside class="module-panel" aria-label="Módulos de treinamento">
+        <aside class="module-panel" aria-label="Navegacao do treinamento">
           <div class="panel-head">
-            <h2>Módulos</h2>
-            <span id="moduleCount">0</span>
+            <h2>Aeronaves</h2>
+            <span id="aircraftCount">0</span>
           </div>
-          <div id="moduleList" class="module-list"></div>
-          <div class="panel-head stage-head">
-            <h2>Etapas</h2>
-            <span id="stageCount">0</span>
+          <div id="aircraftList" class="module-list"></div>
+
+          <div id="trainingNav" class="training-nav hidden">
+            <p class="eyebrow">Aeronave selecionada</p>
+            <h2 id="selectedAircraftTitle" class="selected-aircraft">Cessna 172</h2>
+
+            <div class="panel-head stage-head">
+              <h2>Modulos</h2>
+              <span id="moduleCount">0</span>
+            </div>
+            <div id="moduleList" class="module-list"></div>
+
+            <div class="panel-head stage-head">
+              <h2>Secoes</h2>
+              <span id="stageCount">0</span>
+            </div>
+            <div id="stageList" class="stage-list"></div>
+            <button id="backToAircraftBtn" class="back-button bottom-back" type="button">Voltar e selecionar aeronaves</button>
           </div>
-          <div id="stageList" class="stage-list"></div>
         </aside>
 
         <section class="viewer-section" aria-label="Visualizador">
@@ -42,26 +55,24 @@
             <div id="reticle" class="reticle" aria-hidden="true"></div>
             <div id="hud" class="hud">
               <p id="activeMode">Imagem 360</p>
-              <h2 id="activeTitle">Carregando</h2>
-              <p id="activeHint">Arraste para olhar ao redor. Clique nos pontos para interagir.</p>
+              <h2 id="activeTitle">Selecione uma aeronave</h2>
+              <p id="activeHint">Escolha uma aeronave na barra lateral para abrir os modulos de treinamento.</p>
             </div>
             <div id="vrHud" class="vr-hud" aria-hidden="true">
               <div class="vr-hud-eye">
                 <p class="vrModeText">Imagem 360</p>
-                <h2 class="vrTitleText">Carregando</h2>
-                <p class="vrHintText">Arraste para olhar ao redor. Clique nos pontos para interagir.</p>
+                <h2 class="vrTitleText">Selecione uma aeronave</h2>
+                <p class="vrHintText">Escolha uma aeronave na barra lateral para abrir os modulos de treinamento.</p>
               </div>
               <div class="vr-hud-eye">
                 <p class="vrModeText">Imagem 360</p>
-                <h2 class="vrTitleText">Carregando</h2>
-                <p class="vrHintText">Arraste para olhar ao redor. Clique nos pontos para interagir.</p>
+                <h2 class="vrTitleText">Selecione uma aeronave</h2>
+                <p class="vrHintText">Escolha uma aeronave na barra lateral para abrir os modulos de treinamento.</p>
               </div>
             </div>
           </div>
 
           <div class="control-strip" aria-label="Controles da cena">
-            <button id="mode360Btn" type="button" class="segmented active">360</button>
-            <button id="modeDiagramBtn" type="button" class="segmented">Desenho</button>
             <button id="gyroBtn" type="button" class="ghost-button">Giroscopio</button>
             <button id="resetViewBtn" type="button" class="ghost-button">Centralizar</button>
           </div>
@@ -71,7 +82,7 @@
           <div class="detail-card">
             <p class="eyebrow">Item selecionado</p>
             <h2 id="detailTitle">Selecione um ponto</h2>
-            <p id="detailText">Use o mouse ou toque na tela para selecionar componentes, etapas e observações.</p>
+            <p id="detailText">Use o mouse ou toque na tela para selecionar componentes, etapas e observacoes.</p>
           </div>
           <div class="detail-card">
             <p class="eyebrow">Checklist</p>

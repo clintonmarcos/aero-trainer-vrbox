@@ -1,7 +1,7 @@
 const modules = [
   {
     id: "cessna-tour",
-    title: "O que e um aviao",
+    title: "Visita virtual",
     summary: "Visita virtual demonstrativa usando um Cessna 172.",
     stages: [
       {
@@ -20,28 +20,28 @@ const modules = [
         hotspots: [
           {
             title: "Aeronave de treinamento",
-            text: "O Cessna 172 e um aviao leve de aviacao geral, muito usado em instrucao por ser estavel, simples e previsivel.",
+            text: "O Cessna 172 e uma aeronave leve de aviacao geral, muito usada em treinamento por combinar estabilidade, simplicidade operacional e boa visibilidade externa.\n\nComo introducao tecnica, observe a configuracao geral: asa alta, motor dianteiro com helice, trem de pouso fixo triciclo e cabine para piloto, instrutor e passageiros. Essa arquitetura facilita inspeções visuais, reduz complexidade de sistemas e torna a aeronave adequada para ensino inicial de voo e manutencao basica.\n\nDurante uma visita tecnica, use esta visao para localizar os grandes conjuntos: fuselagem, asas, empenagem, motor, trem de pouso e superficies de comando.",
             yaw: 0.47,
             pitch: 0.02,
             color: "#40c4a4"
           },
           {
             title: "Asa alta",
-            text: "A configuracao de asa alta deixa a cabine abaixo da asa e favorece a visibilidade do solo durante voo e manobras.",
+            text: "A asa alta posiciona a asa acima da cabine e e uma marca importante do Cessna 172.\n\nDo ponto de vista operacional, essa configuracao melhora a visibilidade para baixo, ajuda em treinamentos de referencia visual e facilita o embarque em comparacao com algumas aeronaves de asa baixa. Na manutencao, a asa concentra componentes importantes, como ailerons, flapes, pontos de fixacao dos montantes e, dependendo da configuracao, tanques de combustivel.\n\nEm uma inspecao visual, procure danos no bordo de ataque, rebites soltos, contaminacao, deformacoes, vazamentos e liberdade de movimento das superficies.",
             yaw: 0.56,
             pitch: -0.09,
             color: "#f2b84b"
           },
           {
             title: "Trem fixo",
-            text: "O trem de pouso fixo e robusto e reduz complexidade de operacao e manutencao em aeronaves de treinamento.",
+            text: "O trem de pouso fixo permanece exposto durante todo o voo. No Cessna 172, a configuracao triciclo usa duas rodas principais e uma roda dianteira, chamada bequilha.\n\nA vantagem tecnica e a simplicidade: nao ha sistema de recolhimento, portas ou atuadores de trem retratil. Isso reduz peso, custo e pontos de falha. Em contrapartida, o trem fixo gera mais arrasto aerodinamico.\n\nPara treinamento de manutencao, observe pneus, rodas, carenagens, struts, fixacoes, folgas, desgaste irregular e sinais de impacto.",
             yaw: 0.44,
             pitch: 0.13,
             color: "#7db7ff"
           },
           {
             title: "Area de inspecao",
-            text: "Em um treinamento real, esta cena pode receber pontos para inspeção pre-voo, seguranca no patio e identificacao de componentes.",
+            text: "Esta area representa o ambiente de inspecao externa no patio. Antes de qualquer procedimento, a prioridade e seguranca: aeronave estacionada, freio/controle conforme procedimento local, area livre ao redor, helice tratada como potencialmente perigosa e atencao ao trafego de patio.\n\nEm um curso real, esta cena pode receber pontos para checklist pre-voo, identificacao de danos, verificacao de fluidos, seguranca operacional e reconhecimento de componentes estruturais.",
             yaw: 0.68,
             pitch: 0.11,
             color: "#ee6b6e"
@@ -94,21 +94,21 @@ const modules = [
         hotspots: [
           {
             title: "Instrumentos de voo",
-            text: "Incluem velocidade, atitude, altitude, razao de subida, proa e coordenacao. Sao a base da orientacao do piloto.",
+            text: "Os instrumentos de voo fornecem ao piloto informacoes de atitude, velocidade, altitude, proa, razao de subida/descida e coordenacao.\n\nEm aeronaves de treinamento, e comum encontrar o conjunto basico conhecido como 'six pack', embora a configuracao varie por ano, modernizacao e avionicos instalados. Para instrucao de manutencao, o foco inicial e reconhecer a funcao de cada instrumento, verificar fixacao, estado visual, iluminacao, conexoes aparentes e coerencia operacional conforme procedimento autorizado.\n\nNunca trate a indicacao de instrumentos como garantia isolada de aeronavegabilidade; ela deve ser avaliada dentro do procedimento de inspecao e manutencao aplicavel.",
             yaw: 0.42,
             pitch: 0.04,
             color: "#40c4a4"
           },
           {
             title: "Manche",
-            text: "Move ailerons e profundor. Puxar tende a elevar o nariz; empurrar tende a baixar.",
+            text: "O manche transmite comandos do piloto para as superficies primarias de controle.\n\nMovimentos laterais comandam os ailerons, responsaveis pela rolagem. Movimentos para frente e para tras comandam o profundor, que altera a atitude de nariz. Em uma verificacao funcional, deve-se observar liberdade de movimento, ausencia de travamentos, resposta correta das superficies, folgas anormais e interferencias.\n\nPara treinamento, associe sempre o movimento do manche ao movimento real das superficies externas: isso ajuda o aluno a entender a cadeia de comando mecanica ou assistida.",
             yaw: 0.41,
             pitch: 0.18,
             color: "#f2b84b"
           },
           {
             title: "Manetes",
-            text: "Controlam potencia, mistura e outros ajustes conforme a versao da aeronave.",
+            text: "As manetes controlam parametros do motor, como potencia e mistura, conforme a configuracao da aeronave.\n\nNo treinamento basico, destaque que cada comando tem funcao especifica e deve ser operado de acordo com o manual da aeronave. Em manutencao, a verificacao envolve curso, suavidade, identificacao, fixacao, resposta do sistema comandado e ausencia de atrito ou folga excessiva.\n\nQualquer ajuste de cabo, batente ou marcha lenta deve seguir documentacao tecnica e ser executado por pessoal habilitado.",
             yaw: 0.51,
             pitch: 0.12,
             color: "#ee6b6e"
@@ -154,21 +154,21 @@ const modules = [
         hotspots: [
           {
             title: "Ailerons",
-            text: "Controlam a rolagem. Um sobe enquanto o outro desce, inclinando a aeronave.",
+            text: "Os ailerons ficam nas asas e controlam a rolagem da aeronave.\n\nQuando um aileron sobe, o outro normalmente desce, criando diferenca de sustentacao entre as asas. Essa diferenca inclina a aeronave para iniciar ou corrigir curvas. Em uma inspecao, verifique dobradicas, folgas, contrapesos, fixadores, cabos ou hastes de comando, estado do bordo de fuga e liberdade de movimento.\n\nTambem e importante confirmar sentido correto de comando: manche para a esquerda deve produzir resposta compativel nas superficies.",
             yaw: 0.72,
             pitch: -0.06,
             color: "#40c4a4"
           },
           {
             title: "Profundor",
-            text: "Controla o movimento de nariz para cima ou para baixo.",
+            text: "O profundor fica na empenagem horizontal e controla o movimento de nariz para cima ou para baixo.\n\nEle altera o momento de arfagem da aeronave e e essencial para decolagem, pouso, compensacao e controle de velocidade. Em manutencao, observe integridade da superficie, dobradicas, fixadores, curso, liberdade de movimento e qualquer dano no bordo de ataque ou bordo de fuga.\n\nO ajuste incorreto ou travamento do profundor e uma condicao critica, por isso a verificacao funcional deve ser tratada com muita atencao.",
             yaw: 0.31,
             pitch: 0.2,
             color: "#f2b84b"
           },
           {
             title: "Leme",
-            text: "Controla guinada, ajudando a apontar o nariz para esquerda ou direita.",
+            text: "O leme fica na empenagem vertical e controla a guinada, ou seja, o movimento do nariz para esquerda ou direita.\n\nEle e comandado pelos pedais e ajuda na coordenacao de curvas, controle direcional no solo e compensacao de efeitos do motor. Em inspecao, verifique dobradicas, batentes, cabos, fixadores, alinhamento e ausencia de interferencias.\n\nO leme tambem trabalha junto com a bequilha em muitas operacoes de taxi, dependendo do sistema de comando da aeronave.",
             yaw: 0.25,
             pitch: -0.08,
             color: "#ee6b6e"
@@ -214,21 +214,21 @@ const modules = [
         hotspots: [
           {
             title: "Helice",
-            text: "Transforma potencia do motor em tracao. Deve ser inspecionada quanto a trincas, amassados e fixacao.",
+            text: "A helice transforma potencia do motor em tracao, acelerando o ar para produzir movimento para frente.\n\nEm uma aeronave de treinamento, a inspecao visual da helice e um ponto critico: procure trincas, amassados, erosao, delaminacao, danos nas pontas, fixacao inadequada e sinais de impacto por objetos. Mesmo pequenos danos podem evoluir para vibracao, perda de eficiencia ou falha estrutural.\n\nTrate sempre a helice como potencialmente perigosa. Nao movimente sem seguir procedimento adequado e considere que o motor pode partir em condicoes especificas se houver falha de seguranca.",
             yaw: 0.5,
             pitch: 0.03,
             color: "#40c4a4"
           },
           {
             title: "Cowling",
-            text: "Carenagem do motor. Protege o compartimento e direciona o fluxo de ar.",
+            text: "O cowling e a carenagem que envolve o compartimento do motor.\n\nEle protege componentes, organiza o fluxo de ar de arrefecimento e melhora a aerodinamica da parte frontal. Durante a inspecao, verifique travas, parafusos, alinhamento, trincas, danos por vibracao, sinais de atrito interno e evidencias de vazamento de oleo ou combustivel.\n\nUm cowling mal fechado ou danificado pode afetar arrefecimento, causar vibracao e representar risco operacional.",
             yaw: 0.5,
             pitch: 0.1,
             color: "#f2b84b"
           },
           {
             title: "Entrada de ar",
-            text: "Permite fluxo para arrefecimento e admissao. Deve estar livre de obstrucoes.",
+            text: "As entradas de ar permitem fluxo para arrefecimento e, conforme o sistema, para admissao do motor.\n\nElas devem permanecer livres de obstrucao, detritos, ninho, gelo, deformacoes ou objetos estranhos. A restricao de fluxo pode prejudicar desempenho, temperatura e funcionamento do motor.\n\nEm treinamento, use este ponto para reforcar a diferenca entre inspecao visual simples e manutencao corretiva: se houver dano ou obstrucao relevante, a aeronave nao deve ser simplesmente liberada sem avaliacao adequada.",
             yaw: 0.5,
             pitch: 0.2,
             color: "#ee6b6e"
@@ -274,21 +274,21 @@ const modules = [
         hotspots: [
           {
             title: "Trem principal",
-            text: "Suporta a maior parte do peso no solo e recebe cargas de pouso.",
+            text: "O trem principal suporta a maior parte do peso da aeronave no solo e absorve grande parte das cargas de pouso.\n\nNo Cessna 172, ele e parte essencial da estabilidade durante taxi, corrida de decolagem e pouso. Em inspecao, observe alinhamento, fixacoes, carenagens, estrutura, sinais de impacto, corrosao, folgas, vazamentos em componentes aplicaveis e desgaste irregular dos pneus.\n\nDanos nessa area podem indicar pouso duro, contato com obstaculos ou manutencao pendente.",
             yaw: 0.88,
             pitch: 0.14,
             color: "#40c4a4"
           },
           {
             title: "Bequilha",
-            text: "Roda dianteira usada para apoio e direcao no taxi.",
+            text: "A bequilha e a roda dianteira do trem triciclo. Ela apoia a parte frontal da aeronave e participa do controle direcional no taxi.\n\nDurante a verificacao, observe pneu, roda, garfo, amortecimento, fixacoes, alinhamento e liberdade de movimento. Folgas, shimmy, desgaste irregular ou componentes danificados podem afetar controle no solo.\n\nTambem e importante manter a area livre durante operacoes, pois movimentos de taxi e giro de helice tornam a regiao frontal sensivel para seguranca.",
             yaw: 0.5,
             pitch: 0.12,
             color: "#f2b84b"
           },
           {
             title: "Pneu",
-            text: "Inspecione desgaste, cortes, calibragem aparente e objetos presos.",
+            text: "O pneu deve ser avaliado quanto a desgaste, cortes, bolhas, rachaduras, objetos presos, achatamento, exposicao de lonas e sinais de aquecimento ou arrasto.\n\nA calibragem correta e essencial para estabilidade, frenagem, absorcao de cargas e vida util do conjunto. Uma avaliacao visual ajuda a encontrar problemas obvios, mas nao substitui verificacao conforme procedimento de manutencao.\n\nEm treinamento, peca ao aluno para comparar os pneus principais e a bequilha, procurando diferencas de desgaste e evidencias de operacao inadequada.",
             yaw: 0.11,
             pitch: 0.19,
             color: "#ee6b6e"
@@ -322,54 +322,40 @@ const modules = [
   },
   {
     id: "walkaround",
-    title: "Inspecao externa",
-    summary: "Pontos visuais em uma cena 360.",
+    title: "Videos VR",
+    summary: "Area reservada para videos imersivos.",
     type: "360",
     checklist: [
-      "Confirmar area livre e aeronave calcada.",
-      "Inspecionar bordos de ataque e superficies moveis.",
-      "Registrar anomalias com foto e observacao."
+      "Espaco reservado para videos VR.",
+      "Os conteudos serao adicionados posteriormente.",
+      "Use este modulo para aulas com video imersivo, demonstracoes e procedimentos guiados."
     ],
     panorama: "",
     hotspots: [
       {
-        title: "Bordo de ataque",
-        text: "Verifique amassados, contaminacao, gelo, trincas e fixadores ausentes antes de liberar a etapa.",
-        yaw: 0.22,
-        pitch: -0.08,
+        title: "Videos VR",
+        text: "Este modulo esta reservado para videos imersivos da aeronave.\n\nA ideia e inserir futuramente videos 180 ou 360 com demonstracoes de inspecao, procedimentos de manutencao, orientacoes de seguranca e sequencias narradas para treinamento.\n\nQuando o conteudo for adicionado, cada video podera ter pontos de pausa, perguntas e instrucoes tecnicas sincronizadas.",
+        yaw: 0.5,
+        pitch: 0,
         color: "#40c4a4"
-      },
-      {
-        title: "Trem de pouso",
-        text: "Confirme condicao do pneu, vazamentos, pinos de seguranca e indicios de aquecimento anormal.",
-        yaw: 0.68,
-        pitch: 0.18,
-        color: "#f2b84b"
-      },
-      {
-        title: "Painel de acesso",
-        text: "Confira fechamento, travas, lacres e alinhamento com a fuselagem.",
-        yaw: 0.86,
-        pitch: -0.02,
-        color: "#ee6b6e"
       }
     ]
   },
   {
     id: "x5-panorama",
-    title: "Cena Insta360 X5",
-    summary: "Espaco reservado para suas fotos 360.",
+    title: "Informacoes tecnicas",
+    summary: "Area reservada para dados tecnicos da aeronave.",
     type: "360",
     panorama: "",
     checklist: [
-      "Exportar imagem equiretangular 2:1 da Insta360.",
-      "Salvar em assets/panoramas/nome-da-cena.jpg.",
-      "Adicionar caminho da imagem no modulo correspondente."
+      "Espaco reservado para dados tecnicos.",
+      "Adicionar futuramente especificacoes, limites e referencias.",
+      "Conectar informacoes ao modelo de aeronave selecionado."
     ],
     hotspots: [
       {
-        title: "Ponto de instrucao",
-        text: "Quando sua foto 360 entrar aqui, este ponto pode ficar sobre um componente real da aeronave.",
+        title: "Informacoes tecnicas",
+        text: "Este modulo esta reservado para informacoes tecnicas do Cessna 172.\n\nAqui podem entrar dados como configuracao geral, dimensoes, pesos, limites operacionais, combustivel, sistema eletrico, motor, helice, trem de pouso e referencias de manutencao.\n\nA recomendacao e separar informacoes gerais de treinamento de dados oficiais de manutencao, sempre indicando quando o aluno deve consultar o manual aprovado da aeronave.",
         yaw: 0.5,
         pitch: 0,
         color: "#40c4a4"
@@ -378,10 +364,24 @@ const modules = [
   }
 ];
 
+const aircrafts = [
+  {
+    id: "cessna-172",
+    title: "Cessna 172",
+    summary: "Aeronave leve de asa alta para treinamento e aviacao geral.",
+    modules
+  }
+];
+
 const canvas = document.querySelector("#sceneCanvas");
 const ctx = canvas.getContext("2d");
 
 const els = {
+  aircraftList: document.querySelector("#aircraftList"),
+  aircraftCount: document.querySelector("#aircraftCount"),
+  trainingNav: document.querySelector("#trainingNav"),
+  selectedAircraftTitle: document.querySelector("#selectedAircraftTitle"),
+  backToAircraftBtn: document.querySelector("#backToAircraftBtn"),
   moduleList: document.querySelector("#moduleList"),
   moduleCount: document.querySelector("#moduleCount"),
   stageList: document.querySelector("#stageList"),
@@ -405,6 +405,7 @@ const panoramaViewYawSpan = 0.28;
 const panoramaViewPitchSpan = 0.56;
 
 let activeModule = modules[0];
+let activeAircraft = null;
 let activeStageIndex = 0;
 let activeView = currentContent().type;
 let isVrMode = false;
@@ -422,11 +423,26 @@ function currentContent() {
   return activeModule.stages?.[activeStageIndex] || activeModule;
 }
 
+function renderAircraftList() {
+  els.aircraftCount.textContent = aircrafts.length;
+  els.aircraftList.innerHTML = "";
+
+  aircrafts.forEach((aircraft) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `module-button${activeAircraft?.id === aircraft.id ? " active" : ""}`;
+    button.innerHTML = `<strong>${aircraft.title}</strong><span>${aircraft.summary}</span>`;
+    button.addEventListener("click", () => selectAircraft(aircraft.id));
+    els.aircraftList.appendChild(button);
+  });
+}
+
 function renderModuleList() {
-  els.moduleCount.textContent = modules.length;
+  const availableModules = activeAircraft?.modules || [];
+  els.moduleCount.textContent = availableModules.length;
   els.moduleList.innerHTML = "";
 
-  modules.forEach((module) => {
+  availableModules.forEach((module) => {
     const button = document.createElement("button");
     button.type = "button";
     button.className = `module-button${module.id === activeModule.id ? " active" : ""}`;
@@ -452,9 +468,34 @@ function renderStageList() {
 }
 
 function selectModule(id) {
-  activeModule = modules.find((module) => module.id === id) || modules[0];
+  const availableModules = activeAircraft?.modules || modules;
+  activeModule = availableModules.find((module) => module.id === id) || availableModules[0];
   activeStageIndex = 0;
   selectContent();
+}
+
+function selectAircraft(id) {
+  activeAircraft = aircrafts.find((aircraft) => aircraft.id === id) || aircrafts[0];
+  activeModule = activeAircraft.modules[0];
+  activeStageIndex = 0;
+  els.aircraftList.classList.add("hidden");
+  els.trainingNav.classList.remove("hidden");
+  els.selectedAircraftTitle.textContent = activeAircraft.title;
+  selectContent();
+}
+
+function backToAircraftSelection() {
+  activeAircraft = null;
+  els.aircraftList.classList.remove("hidden");
+  els.trainingNav.classList.add("hidden");
+  els.moduleList.innerHTML = "";
+  els.stageList.innerHTML = "";
+  els.moduleCount.textContent = "0";
+  els.stageCount.textContent = "0";
+  els.checklist.innerHTML = "";
+  resetSelection();
+  showSystemMessage("Selecione uma aeronave", "Escolha uma aeronave na barra lateral para abrir os modulos de treinamento disponiveis.");
+  renderAircraftList();
 }
 
 function selectStage(index) {
@@ -468,6 +509,7 @@ function selectContent() {
   yaw = content.startYaw ?? 0.5;
   pitch = content.startPitch ?? 0;
   resetSelection();
+  renderAircraftList();
   renderModuleList();
   renderStageList();
   renderChecklist();
@@ -476,7 +518,11 @@ function selectContent() {
 }
 
 function goToTrainingHome() {
-  activeModule = modules[0];
+  if (!activeAircraft) {
+    backToAircraftSelection();
+    return;
+  }
+  activeModule = activeAircraft.modules[0];
   activeStageIndex = 0;
   selectContent();
 }
@@ -1160,6 +1206,7 @@ canvas.addEventListener("pointerup", (event) => {
 
 els.vrBtn.addEventListener("click", toggleVrMode);
 els.fullscreenBtn.addEventListener("click", () => document.documentElement.requestFullscreen?.());
+els.backToAircraftBtn.addEventListener("click", backToAircraftSelection);
 els.gyroBtn.addEventListener("click", toggleGyroscope);
 els.resetViewBtn.addEventListener("click", () => {
   const content = currentContent();
@@ -1312,9 +1359,6 @@ function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
 }
 
-renderModuleList();
-renderStageList();
-renderChecklist();
-loadPanorama();
-updateHud();
+renderAircraftList();
+backToAircraftSelection();
 draw();
