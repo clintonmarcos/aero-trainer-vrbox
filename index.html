@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#101316">
+    <title>Aero Trainer VR Box</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Treinamento visual</p>
+          <h1>Aero Trainer VR Box</h1>
+        </div>
+        <div class="topbar-actions">
+          <button id="fullscreenBtn" class="icon-button" type="button" title="Tela cheia" aria-label="Tela cheia">
+            <span aria-hidden="true">[]</span>
+          </button>
+          <button id="vrBtn" class="primary-button" type="button">Modo VR Box</button>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <aside class="module-panel" aria-label="Módulos de treinamento">
+          <div class="panel-head">
+            <h2>Módulos</h2>
+            <span id="moduleCount">0</span>
+          </div>
+          <div id="moduleList" class="module-list"></div>
+          <div class="panel-head stage-head">
+            <h2>Etapas</h2>
+            <span id="stageCount">0</span>
+          </div>
+          <div id="stageList" class="stage-list"></div>
+        </aside>
+
+        <section class="viewer-section" aria-label="Visualizador">
+          <div id="viewer" class="viewer">
+            <canvas id="sceneCanvas"></canvas>
+            <div id="reticle" class="reticle" aria-hidden="true"></div>
+            <div id="hud" class="hud">
+              <p id="activeMode">Imagem 360</p>
+              <h2 id="activeTitle">Carregando</h2>
+              <p id="activeHint">Arraste para olhar ao redor. Clique nos pontos para interagir.</p>
+            </div>
+            <div id="vrHud" class="vr-hud" aria-hidden="true">
+              <div class="vr-hud-eye">
+                <p class="vrModeText">Imagem 360</p>
+                <h2 class="vrTitleText">Carregando</h2>
+                <p class="vrHintText">Arraste para olhar ao redor. Clique nos pontos para interagir.</p>
+              </div>
+              <div class="vr-hud-eye">
+                <p class="vrModeText">Imagem 360</p>
+                <h2 class="vrTitleText">Carregando</h2>
+                <p class="vrHintText">Arraste para olhar ao redor. Clique nos pontos para interagir.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="control-strip" aria-label="Controles da cena">
+            <button id="mode360Btn" type="button" class="segmented active">360</button>
+            <button id="modeDiagramBtn" type="button" class="segmented">Desenho</button>
+            <button id="gyroBtn" type="button" class="ghost-button">Giroscopio</button>
+            <button id="resetViewBtn" type="button" class="ghost-button">Centralizar</button>
+          </div>
+        </section>
+
+        <aside class="detail-panel" aria-label="Detalhes do item">
+          <div class="detail-card">
+            <p class="eyebrow">Item selecionado</p>
+            <h2 id="detailTitle">Selecione um ponto</h2>
+            <p id="detailText">Use o mouse ou toque na tela para selecionar componentes, etapas e observações.</p>
+          </div>
+          <div class="detail-card">
+            <p class="eyebrow">Checklist</p>
+            <div id="checklist" class="checklist"></div>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
