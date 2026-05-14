@@ -1,3 +1,419 @@
+const videosVrSoonText = `Em breve.
+
+Este modulo sera usado para videos VR/360 do Cessna 172.
+
+Planejamento de uso:
+
+1. Inserir video 360 hospedado no YouTube.
+2. Abrir o video dentro do treinamento como uma etapa imersiva.
+3. Adicionar pausas orientadas para explicar componentes, seguranca no patio, inspecao externa e procedimentos.
+4. Usar o painel direito para instrucoes sincronizadas, checklist e perguntas de verificacao.
+
+Enquanto o video nao for inserido, este modulo fica reservado para conteudo futuro.`;
+
+const technicalIndexText = `Indice tecnico - Cessna 172 / Skyhawk
+
+Aviso de uso:
+Este material e uma ficha didatica para treinamento e familiarizacao. Nao substitui POH, AFM, Maintenance Manual, Illustrated Parts Catalog, Service Bulletins, Airworthiness Directives, manual do motor, manual da helice, documentacao do operador ou requisitos da autoridade aeronautica aplicavel.
+
+1. Identificacao geral
+2. Configuracao da aeronave
+3. Dimensoes principais
+4. Cabine e capacidade
+5. Pesos e carregamento
+6. Combustivel
+7. Desempenho de referencia
+8. Grupo motopropulsor
+9. Sistemas principais
+10. Pontos de manutencao e inspecao
+11. Riscos e cuidados de treinamento
+12. Itens para desenvolver no curso
+
+Como usar esta ficha:
+Selecione as secoes desta area para estudar a aeronave por conjunto. Em treinamento pratico, sempre relacione cada item da ficha com uma visualizacao na visita virtual, uma imagem real da aeronave ou um componente fisico.`;
+
+const technicalSpecsText = `Ficha tecnica didatica - Cessna 172 Skyhawk
+
+1. Identificacao geral
+
+Tipo:
+Aviao leve, monomotor, asa alta, trem de pouso fixo triciclo, quatro lugares, empregado amplamente em treinamento, aviacao geral, voo local, navegacao visual e formacao inicial de pilotos.
+
+Fabricante:
+Cessna, marca da Textron Aviation.
+
+Familia:
+Cessna 172 / Skyhawk. Existem muitas variantes historicas. Esta ficha usa como referencia didatica a configuracao moderna do Cessna 172S Skyhawk, mas os dados podem variar conforme ano, modificacoes, avionicos, STCs, equipamentos instalados e documentacao especifica da aeronave.
+
+Configuracao basica:
+- 1 motor piston dianteiro.
+- 1 helice tratora.
+- Asa alta semi-cantilever com montantes.
+- Cabine com ate 4 ocupantes.
+- Trem fixo triciclo.
+- Empenagem convencional.
+- Superficies primarias: ailerons, profundor e leme.
+- Superficies secundarias: flapes e compensador.
+
+2. Dimensoes principais de referencia
+
+Comprimento:
+27 ft 2 in, aproximadamente 8,3 m.
+
+Altura:
+8 ft 11 in, aproximadamente 2,7 m.
+
+Envergadura:
+36 ft 1 in, aproximadamente 11,0 m.
+
+Area alar:
+174 sq ft, aproximadamente 16,17 m2.
+
+Cabine:
+- Altura interna aproximada: 48 in, cerca de 1,2 m.
+- Largura interna aproximada: 40 in, cerca de 1,0 m.
+- Comprimento interno aproximado: 11 ft 10 in, cerca de 3,6 m.
+- Ocupantes maximos: 4.
+
+Bagageiro:
+- Peso de referencia: ate 120 lb, cerca de 54 kg.
+- Volume de referencia: 30 cu ft, cerca de 0,85 m3.
+
+3. Pesos de referencia
+
+Peso maximo de rampa:
+2.558 lb, cerca de 1.160 kg.
+
+Peso maximo de decolagem:
+2.550 lb, cerca de 1.157 kg.
+
+Peso maximo de pouso:
+2.550 lb, cerca de 1.157 kg.
+
+Peso vazio basico de referencia:
+1.680 lb, cerca de 762 kg.
+
+Carga util de referencia:
+878 lb, cerca de 398 kg.
+
+Payload maximo de referencia:
+870 lb, cerca de 395 kg.
+
+Payload com combustivel cheio de referencia:
+560 lb, cerca de 254 kg.
+
+Observacao:
+Em manutencao e operacao, nunca use valores genericos para liberar uma aeronave. Use peso e balanceamento atualizado daquela celula especifica, incluindo equipamentos instalados, modificacoes e historico documental.
+
+4. Combustivel
+
+Volume utilizavel de referencia:
+53 gal US, cerca de 201 litros.
+
+Peso utilizavel de referencia:
+318 lb, cerca de 144 kg.
+
+Sistema:
+Em configuracoes comuns do 172, os tanques ficam nas asas. O combustivel segue para o sistema do motor por linhas, seletor, filtros/drenos e componentes especificos da versao.
+
+Pontos didaticos:
+- Drenagem de contaminacao.
+- Verificacao visual de quantidade, quando aplicavel.
+- Tampas, respiros e vedacao.
+- Integridade de linhas e conexoes.
+- Identificacao de vazamentos ou manchas.
+
+5. Desempenho de referencia
+
+Velocidade maxima de cruzeiro:
+124 KTAS, cerca de 230 km/h.
+
+Alcance maximo de referencia:
+640 nm, cerca de 1.185 km.
+
+Distancia de decolagem de referencia:
+1.630 ft, cerca de 497 m.
+
+Rolagem de decolagem de referencia:
+960 ft, cerca de 293 m.
+
+Distancia de pouso de referencia:
+1.335 ft, cerca de 407 m.
+
+Rolagem de pouso de referencia:
+575 ft, cerca de 175 m.
+
+Teto de servico:
+14.000 ft, cerca de 4.267 m.
+
+Razao maxima de subida:
+730 ft/min, cerca de 223 m/min.
+
+Velocidade limite maxima:
+163 KIAS, cerca de 302 km/h.
+
+Velocidade de estol de referencia:
+48 KCAS, cerca de 89 km/h.
+
+Observacao:
+Valores de desempenho dependem de peso, altitude densidade, vento, pista, configuracao, tecnica, estado da aeronave e dados oficiais do manual.
+
+6. Grupo motopropulsor
+
+Motor de referencia:
+Lycoming IO-360-L2A.
+
+Potencia de referencia:
+180 hp.
+
+Arquitetura:
+Motor a pistao, quatro cilindros opostos, refrigerado a ar, com injecao de combustivel em configuracoes modernas do 172S.
+
+Helice:
+McCauley, tratora, normalmente de passo fixo em configuracoes de treinamento do Skyhawk.
+
+Pontos didaticos:
+- Cowling e fixacoes.
+- Entrada de ar.
+- Dutos e fluxo de ar de arrefecimento.
+- Vazamentos de oleo ou combustivel.
+- Condicao visual da helice.
+- Spinner e fixacoes.
+- Linhas, cabos, conexoes e suportes.
+- Integridade geral do compartimento do motor.
+
+7. Avionicos e cabine
+
+Configuracoes modernas:
+Muitos Skyhawk modernos usam Garmin G1000 NXi e instrumentos de standby. Aeronaves mais antigas podem usar painel analogico ou retrofits.
+
+Itens de familiarizacao:
+- PFD/MFD ou instrumentos analogicos.
+- Radios e navegacao.
+- Disjuntores.
+- Chaves eletricas.
+- Manetes de potencia e mistura.
+- Pedais.
+- Manche.
+- Seletor de combustivel, quando visivel e aplicavel.
+- Comandos de flape e compensador.
+
+8. Sistemas principais
+
+Estrutura:
+Fuselagem metalica semi-monocoque, asas metalicas, empenagem convencional e superficies de comando articuladas.
+
+Comandos de voo:
+Sistema mecanico por cabos, hastes, polias, bellcranks e conexoes, conforme conjunto e versao. O aluno deve entender relacao entre comando na cabine e movimento externo da superficie.
+
+Sistema eletrico:
+Bateria, alternador, barramentos, disjuntores, chaves e consumidores. Configuracao varia por versao e avionicos instalados.
+
+Sistema de combustivel:
+Tanques nas asas, linhas, respiros, drenagem, seletor e alimentacao do motor. Verificar sempre documentacao da aeronave especifica.
+
+Sistema de trem de pouso:
+Trem fixo triciclo. Conjunto com rodas principais, bequilha, pneus, freios nas rodas principais e carenagens quando instaladas.
+
+Sistema de freios:
+Freios hidraulicos nas rodas principais, operados pelos pedais. Inspecionar linhas, vazamentos, pastilhas, discos e resposta conforme procedimento.
+
+Sistema de pitot-estatico:
+Fornece dados para instrumentos como velocidade, altitude e razao vertical. Deve estar livre de obstrucoes, contaminacao, agua e danos.
+
+Sistema de ventilacao/aquecimento:
+Entradas, dutos, comandos e saidas de ar. Em treinamento, reforcar risco de monoxido de carbono em sistemas de aquecimento defeituosos.`;
+
+const technicalMaintenanceText = `Informacoes para manutencao e treinamento
+
+1. Principio fundamental
+
+Esta ficha e didatica. Qualquer inspecao, ajuste, reparo, substituicao, teste operacional, liberacao para retorno ao servico ou registro deve seguir documentacao aprovada e ser feito por pessoal habilitado.
+
+2. Documentos que devem orientar a manutencao
+
+- POH/AFM da aeronave especifica.
+- Maintenance Manual / Service Manual aplicavel.
+- Illustrated Parts Catalog.
+- Wiring diagrams.
+- Manual do motor Lycoming aplicavel.
+- Manual da helice McCauley aplicavel.
+- Service Bulletins e Service Letters.
+- Airworthiness Directives.
+- Registros de celula, motor e helice.
+- Lista de equipamentos e peso e balanceamento atualizados.
+- Programa de manutencao do operador.
+
+3. Inspecao externa - areas de interesse
+
+Nariz e motor:
+- Condicao da helice.
+- Spinner e fixacoes.
+- Cowling, travas e parafusos.
+- Entradas de ar.
+- Vazamentos de oleo ou combustivel.
+- Linhas, cabos, suportes e conexoes visiveis.
+- Estado geral do compartimento do motor.
+
+Asas:
+- Bordo de ataque.
+- Bordo de fuga.
+- Ailerons.
+- Flapes.
+- Montantes.
+- Pontos de fixacao.
+- Tampas de combustivel.
+- Respiros.
+- Drenos.
+- Luzes.
+- Revestimento, rebites e paineis.
+
+Fuselagem:
+- Portas.
+- Janelas.
+- Antenas.
+- Paineis de acesso.
+- Drenos.
+- Deformacoes.
+- Corrosao.
+- Trincas.
+- Fixadores ausentes.
+
+Empenagem:
+- Estabilizador vertical.
+- Leme.
+- Estabilizador horizontal.
+- Profundor.
+- Compensador.
+- Dobradicas.
+- Batentes.
+- Cabos ou conexoes.
+- Folgas e liberdade de movimento.
+
+Trem de pouso:
+- Pneus.
+- Rodas.
+- Carenagens.
+- Freios.
+- Linhas hidraulicas.
+- Estrutura do trem.
+- Bequilha.
+- Shimmy damper, quando aplicavel.
+- Desgaste irregular.
+- Evidencia de pouso duro.
+
+4. Inspecao da cabine
+
+- Estado dos assentos e trilhos.
+- Cintos e fixacoes.
+- Extintor, se instalado.
+- Documentos de bordo.
+- Chaves e disjuntores.
+- Comandos de voo livres e corretos.
+- Pedais e freios.
+- Manetes.
+- Instrumentos.
+- Avionicos.
+- Indicadores de combustivel.
+- Seletor de combustivel, se aplicavel.
+- Condicao de portas e travas.
+
+5. Superficies de comando
+
+Objetivo didatico:
+Ensinar o aluno a confirmar nao apenas que a superficie se move, mas que se move no sentido correto, com curso adequado, sem travamento, folga anormal ou interferencia.
+
+Pontos:
+- Ailerons: comando lateral e rolagem.
+- Profundor: comando longitudinal e arfagem.
+- Leme: guinada e controle direcional.
+- Flapes: aumento de sustentacao/arrasto.
+- Compensador: alivio de esforco de comando.
+
+6. Motor e helice
+
+Cuidados:
+Trate a helice como area critica. Nao posicionar pessoas no arco da helice. Seguir procedimento de seguranca antes de qualquer movimentacao.
+
+Itens para treinamento:
+- Danos nas bordas da helice.
+- Vazamentos.
+- Condicao de correias, cabos e linhas visiveis.
+- Fixacao do cowling.
+- Condicao de entradas de ar.
+- Nivel e aspecto do oleo conforme procedimento.
+- Evidencias de superaquecimento, atrito ou vibracao.
+
+7. Pneus, rodas e freios
+
+Itens:
+- Desgaste de banda.
+- Cortes.
+- Bolhas.
+- Rachaduras.
+- Objetos presos.
+- Exposicao de lonas.
+- Pressao conforme procedimento.
+- Vazamentos no sistema de freio.
+- Condicao de discos e pastilhas.
+- Assimetria entre lados.
+
+8. Pitot-estatico
+
+Riscos:
+Obstrucao por insetos, agua, sujeira, gelo ou capa removida incorretamente pode afetar instrumentos de velocidade, altitude e razao vertical.
+
+Treinamento:
+Mostrar fisicamente tomada pitot, portas estaticas e protecoes. Reforcar que soprar ou aplicar pressao indevida pode danificar instrumentos.
+
+9. Combustivel
+
+Treinamento:
+- Confirmar tipo correto.
+- Verificar contaminacao.
+- Drenar pontos previstos.
+- Observar agua, particulas e cor inadequada.
+- Conferir tampas e respiros.
+- Verificar vazamentos e manchas.
+
+10. Corrosao e estrutura
+
+Areas comuns de atencao:
+- Regioes de acumulacao de agua.
+- Paineis inferiores.
+- Dobradicas.
+- Fixadores.
+- Interior de compartimentos.
+- Pontos de contato entre materiais.
+
+11. Itens de instrucao para futuros modulos
+
+- Walkaround guiado.
+- Identificacao de componentes.
+- Falhas visuais simuladas.
+- Checklist interativo.
+- Quiz por hotspot.
+- Comparacao entre condicao normal e anomalia.
+- Video 360 com pausas.
+- Biblioteca de imagens reais da aeronave da escola.
+- Registro de observacoes do aluno.
+- Modo avaliacao sem dicas.
+
+12. Observacao final
+
+O Cessna 172 e excelente para treinamento porque seus sistemas sao visualmente acessiveis e relativamente simples de explicar. Ainda assim, simplicidade didatica nao significa informalidade tecnica: toda acao real de manutencao precisa respeitar documentacao, qualificacao, rastreabilidade e requisitos regulatorios.`;
+
+const technicalReferenceText = `Referencias usadas para esta ficha
+
+- Textron Aviation / Cessna Skyhawk: especificacoes publicas de dimensoes, pesos, desempenho e grupo motopropulsor.
+- Cessna 172S Skyhawk Information Manual: estrutura geral de informacoes, sistemas e dados de referencia.
+- Lycoming IO-360-L2A: motor de referencia para o Cessna 172S moderno.
+
+Notas:
+1. Os valores sao de referencia para treinamento e podem variar conforme a aeronave.
+2. Aeronaves antigas, modificadas ou com STC podem ter dados diferentes.
+3. Para manutencao real, use somente documentacao aplicavel a matricula/numero de serie da aeronave.`;
+
 const modules = [
   {
     id: "cessna-tour",
@@ -20,7 +436,7 @@ const modules = [
         hotspots: [
           {
             title: "Aeronave de treinamento",
-            text: "O Cessna 172 e uma aeronave leve de aviacao geral, muito usada em treinamento por combinar estabilidade, simplicidade operacional e boa visibilidade externa.\n\nComo introducao tecnica, observe a configuracao geral: asa alta, motor dianteiro com helice, trem de pouso fixo triciclo e cabine para piloto, instrutor e passageiros. Essa arquitetura facilita inspeções visuais, reduz complexidade de sistemas e torna a aeronave adequada para ensino inicial de voo e manutencao basica.\n\nDurante uma visita tecnica, use esta visao para localizar os grandes conjuntos: fuselagem, asas, empenagem, motor, trem de pouso e superficies de comando.",
+            text: "O Cessna 172 e uma aeronave leve de aviacao geral, muito usada em treinamento por combinar estabilidade, simplicidade operacional e boa visibilidade externa.\n\nComo introducao tecnica, observe a configuracao geral: asa alta, motor dianteiro com helice, trem de pouso fixo triciclo e cabine para piloto, instrutor e passageiros. Essa arquitetura facilita inspecoes visuais, reduz complexidade de sistemas e torna a aeronave adequada para ensino inicial de voo e manutencao basica.\n\nDurante uma visita tecnica, use esta visao para localizar os grandes conjuntos: fuselagem, asas, empenagem, motor, trem de pouso e superficies de comando.",
             yaw: 0.47,
             pitch: 0.02,
             color: "#40c4a4"
@@ -325,40 +741,76 @@ const modules = [
     title: "Videos VR",
     summary: "Area reservada para videos imersivos.",
     type: "360",
+    introTitle: "Em breve",
+    introText: videosVrSoonText,
     checklist: [
-      "Espaco reservado para videos VR.",
-      "Os conteudos serao adicionados posteriormente.",
-      "Use este modulo para aulas com video imersivo, demonstracoes e procedimentos guiados."
+      "Em breve.",
+      "Futuro suporte a video 360 do YouTube.",
+      "Area reservada para aulas imersivas em video."
     ],
     panorama: "",
-    hotspots: [
-      {
-        title: "Videos VR",
-        text: "Este modulo esta reservado para videos imersivos da aeronave.\n\nA ideia e inserir futuramente videos 180 ou 360 com demonstracoes de inspecao, procedimentos de manutencao, orientacoes de seguranca e sequencias narradas para treinamento.\n\nQuando o conteudo for adicionado, cada video podera ter pontos de pausa, perguntas e instrucoes tecnicas sincronizadas.",
-        yaw: 0.5,
-        pitch: 0,
-        color: "#40c4a4"
-      }
-    ]
+    hotspots: []
   },
   {
     id: "x5-panorama",
     title: "Informacoes tecnicas",
     summary: "Area reservada para dados tecnicos da aeronave.",
-    type: "360",
-    panorama: "",
-    checklist: [
-      "Espaco reservado para dados tecnicos.",
-      "Adicionar futuramente especificacoes, limites e referencias.",
-      "Conectar informacoes ao modelo de aeronave selecionado."
-    ],
-    hotspots: [
+    stages: [
       {
-        title: "Informacoes tecnicas",
-        text: "Este modulo esta reservado para informacoes tecnicas do Cessna 172.\n\nAqui podem entrar dados como configuracao geral, dimensoes, pesos, limites operacionais, combustivel, sistema eletrico, motor, helice, trem de pouso e referencias de manutencao.\n\nA recomendacao e separar informacoes gerais de treinamento de dados oficiais de manutencao, sempre indicando quando o aluno deve consultar o manual aprovado da aeronave.",
-        yaw: 0.5,
-        pitch: 0,
-        color: "#40c4a4"
+        title: "Indice",
+        summary: "Mapa da ficha tecnica.",
+        type: "360",
+        introTitle: "Indice tecnico",
+        introText: technicalIndexText,
+        checklist: [
+          "Ler o aviso de uso.",
+          "Identificar as secoes da ficha.",
+          "Usar a visita virtual como referencia visual."
+        ],
+        panorama: "",
+        hotspots: []
+      },
+      {
+        title: "Ficha tecnica",
+        summary: "Dados gerais, dimensoes, pesos, desempenho e sistemas.",
+        type: "360",
+        introTitle: "Ficha tecnica completa",
+        introText: technicalSpecsText,
+        checklist: [
+          "Revisar configuracao geral.",
+          "Revisar dimensoes, pesos e combustivel.",
+          "Associar sistemas aos componentes visualizados."
+        ],
+        panorama: "",
+        hotspots: []
+      },
+      {
+        title: "Manutencao",
+        summary: "Pontos de inspecao e instrucao tecnica.",
+        type: "360",
+        introTitle: "Informacoes para manutencao",
+        introText: technicalMaintenanceText,
+        checklist: [
+          "Relacionar cada sistema ao documento tecnico aplicavel.",
+          "Identificar areas criticas de inspecao.",
+          "Separar treinamento didatico de liberacao real de manutencao."
+        ],
+        panorama: "",
+        hotspots: []
+      },
+      {
+        title: "Referencias",
+        summary: "Fontes e observacoes de uso.",
+        type: "360",
+        introTitle: "Referencias e notas",
+        introText: technicalReferenceText,
+        checklist: [
+          "Confirmar que os dados sao de referencia.",
+          "Usar documentacao oficial para manutencao real.",
+          "Atualizar dados quando uma aeronave especifica for cadastrada."
+        ],
+        panorama: "",
+        hotspots: []
       }
     ]
   }
@@ -389,6 +841,10 @@ const els = {
   activeMode: document.querySelector("#activeMode"),
   activeTitle: document.querySelector("#activeTitle"),
   activeHint: document.querySelector("#activeHint"),
+  technicalOverlay: document.querySelector("#technicalOverlay"),
+  technicalOverlayMode: document.querySelector("#technicalOverlayMode"),
+  technicalOverlayTitle: document.querySelector("#technicalOverlayTitle"),
+  technicalOverlayText: document.querySelector("#technicalOverlayText"),
   vrModeTexts: document.querySelectorAll(".vrModeText"),
   vrTitleTexts: document.querySelectorAll(".vrTitleText"),
   vrHintTexts: document.querySelectorAll(".vrHintText"),
@@ -421,6 +877,14 @@ let hitTargets = [];
 
 function currentContent() {
   return activeModule.stages?.[activeStageIndex] || activeModule;
+}
+
+function isTechnicalContent(content = currentContent()) {
+  return activeModule.id === "x5-panorama" && Boolean(content.introText);
+}
+
+function isSoonContent(content = currentContent()) {
+  return activeModule.id === "walkaround";
 }
 
 function renderAircraftList() {
@@ -515,6 +979,7 @@ function selectContent() {
   renderChecklist();
   loadPanorama();
   updateHud();
+  updateTechnicalMode();
 }
 
 function goToTrainingHome() {
@@ -539,6 +1004,13 @@ function renderChecklist() {
 }
 
 function resetSelection() {
+  const content = currentContent();
+  if (content.introTitle || content.introText) {
+    els.detailTitle.textContent = content.introTitle || content.title;
+    els.detailText.textContent = content.introText || content.summary || "";
+    return;
+  }
+
   els.detailTitle.textContent = "Selecione um ponto";
   els.detailText.textContent = "Use o mouse ou toque na tela para selecionar componentes, etapas e observacoes.";
 }
@@ -554,16 +1026,31 @@ function updateHud() {
   syncVrHud();
 }
 
+function updateTechnicalMode() {
+  const content = currentContent();
+  const technical = isTechnicalContent(content);
+  const soon = isSoonContent(content);
+  document.body.classList.toggle("technical-mode", technical || soon);
+  els.technicalOverlay.classList.toggle("hidden", !technical && !soon);
+
+  if (!technical && !soon) return;
+
+  els.technicalOverlayMode.textContent = activeModule.title;
+  els.technicalOverlayTitle.textContent = soon ? "Em breve" : content.introTitle || content.title;
+  els.technicalOverlayText.textContent = soon ? videosVrSoonText : content.introText || "";
+}
+
 function loadPanorama() {
   const content = currentContent();
   panoramaImage = null;
-  if (!content.panorama) return;
+  const panoramaPath = content.panorama || (isTechnicalContent(content) || isSoonContent(content) ? "assets/panoramas/cessna-172-apron-360.png" : "");
+  if (!panoramaPath) return;
 
   const image = new Image();
   image.onload = () => {
     panoramaImage = image;
   };
-  image.src = content.panorama;
+  image.src = panoramaPath;
 }
 
 function fitCanvas() {
@@ -616,11 +1103,28 @@ function drawViewport(x, y, width, height, eyeOffset) {
 
 function drawPanorama(x, y, width, height, eyeOffset) {
   const content = currentContent();
+  const home = !activeAircraft;
 
   if (panoramaImage) {
     drawEquirectangular(panoramaImage, x, y, width, height, eyeOffset);
   } else {
     drawPlaceholderPanorama(x, y, width, height, eyeOffset);
+  }
+
+  if (home) {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+    ctx.fillRect(x, y, width, height);
+    drawHomeGraphic(x, y, width, height);
+    return;
+  }
+
+  if (isTechnicalContent(content) || isSoonContent(content)) {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.58)";
+    ctx.fillRect(x, y, width, height);
+    if (isSoonContent(content)) {
+      drawSoonGraphic(x, y, width, height);
+    }
+    return;
   }
 
   const hotspots = content.hotspots || [];
@@ -695,6 +1199,121 @@ function drawDiagram(x, y, width, height) {
   else drawHydraulicDiagram(x, y, width, height);
 
   drawContentNodes(content, x, y, width, height);
+}
+
+function drawSoonGraphic(x, y, width, height) {
+  const cx = x + width / 2;
+  const cy = y + height * 0.42;
+  const scale = Math.min(width, height) / 620;
+
+  ctx.save();
+  ctx.translate(cx, cy);
+  ctx.scale(scale, scale);
+  ctx.fillStyle = "rgba(64, 196, 164, 0.16)";
+  roundRect(-170, -96, 340, 192, 18);
+  ctx.fill();
+  ctx.strokeStyle = "rgba(244, 247, 248, 0.7)";
+  ctx.lineWidth = 5;
+  roundRect(-170, -96, 340, 192, 18);
+  ctx.stroke();
+
+  ctx.fillStyle = "rgba(242, 184, 75, 0.95)";
+  ctx.beginPath();
+  ctx.moveTo(-34, -48);
+  ctx.lineTo(66, 0);
+  ctx.lineTo(-34, 48);
+  ctx.closePath();
+  ctx.fill();
+
+  ctx.fillStyle = "#f4f7f8";
+  ctx.font = "800 54px system-ui";
+  ctx.textAlign = "center";
+  ctx.fillText("EM BREVE", 0, 158);
+  ctx.font = "600 24px system-ui";
+  ctx.fillStyle = "#d8e4e7";
+  ctx.fillText("Video VR 360 do YouTube", 0, 196);
+  ctx.restore();
+}
+
+function drawHomeGraphic(x, y, width, height) {
+  const cx = x + width / 2;
+  const cy = y + height * 0.48;
+  const scale = Math.min(width, height) / 760;
+
+  ctx.save();
+  ctx.translate(cx, cy);
+  ctx.scale(scale, scale);
+
+  ctx.strokeStyle = "rgba(64, 196, 164, 0.72)";
+  ctx.lineWidth = 5;
+  ctx.beginPath();
+  ctx.arc(0, -36, 172, 0, Math.PI * 2);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.ellipse(0, -36, 245, 82, 0, 0, Math.PI * 2);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.ellipse(0, -36, 245, 82, Math.PI / 2, 0, Math.PI * 2);
+  ctx.stroke();
+
+  ctx.fillStyle = "rgba(9, 11, 13, 0.72)";
+  roundRect(-270, -128, 540, 256, 20);
+  ctx.fill();
+  ctx.strokeStyle = "rgba(244, 247, 248, 0.22)";
+  ctx.lineWidth = 3;
+  ctx.stroke();
+
+  drawMiniAircraft(0, -52, 0.9);
+
+  ctx.fillStyle = "#f4f7f8";
+  ctx.font = "900 58px system-ui";
+  ctx.textAlign = "center";
+  ctx.fillText("Virtual Trainer", 0, 82);
+  ctx.fillStyle = "#d8e4e7";
+  ctx.font = "600 24px system-ui";
+  ctx.fillText("Selecione uma aeronave para iniciar", 0, 122);
+
+  ctx.restore();
+}
+
+function drawMiniAircraft(cx, cy, scale) {
+  ctx.save();
+  ctx.translate(cx, cy);
+  ctx.scale(scale, scale);
+  ctx.fillStyle = "#e8eef0";
+  ctx.strokeStyle = "#101316";
+  ctx.lineWidth = 4;
+  roundedPath([
+    [-150, -8],
+    [-92, -32],
+    [88, -28],
+    [158, -10],
+    [142, 10],
+    [-110, 18]
+  ]);
+  ctx.fill();
+  ctx.stroke();
+  ctx.fillStyle = "#40c4a4";
+  ctx.fillRect(-118, 5, 235, 8);
+  ctx.fillStyle = "#d8e4e7";
+  roundedPath([
+    [-45, -30],
+    [-175, -70],
+    [95, -68],
+    [175, -32]
+  ]);
+  ctx.fill();
+  ctx.stroke();
+  ctx.fillStyle = "#d8e4e7";
+  roundedPath([
+    [104, -18],
+    [172, -62],
+    [178, -14]
+  ]);
+  ctx.fill();
+  ctx.stroke();
+  drawPropeller(-162, 0, 58);
+  ctx.restore();
 }
 
 function drawGridBackground(x, y, width, height) {
