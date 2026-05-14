@@ -10,6 +10,8 @@ const modules = [
         type: "360",
         diagram: "c172-exterior",
         panorama: "assets/panoramas/cessna-172-apron-360.png",
+        startYaw: 0.5,
+        startPitch: 0.02,
         checklist: [
           "Identificar fuselagem, asa, empenagem e trem de pouso.",
           "Observar que o Cessna 172 e um aviao de asa alta.",
@@ -19,29 +21,29 @@ const modules = [
           {
             title: "Aeronave de treinamento",
             text: "O Cessna 172 e um aviao leve de aviacao geral, muito usado em instrucao por ser estavel, simples e previsivel.",
-            yaw: 0.5,
-            pitch: -0.04,
+            yaw: 0.47,
+            pitch: 0.02,
             color: "#40c4a4"
           },
           {
             title: "Asa alta",
             text: "A configuracao de asa alta deixa a cabine abaixo da asa e favorece a visibilidade do solo durante voo e manobras.",
-            yaw: 0.46,
-            pitch: -0.16,
+            yaw: 0.56,
+            pitch: -0.09,
             color: "#f2b84b"
           },
           {
             title: "Trem fixo",
             text: "O trem de pouso fixo e robusto e reduz complexidade de operacao e manutencao em aeronaves de treinamento.",
-            yaw: 0.54,
-            pitch: 0.2,
+            yaw: 0.44,
+            pitch: 0.13,
             color: "#7db7ff"
           },
           {
             title: "Area de inspecao",
             text: "Em um treinamento real, esta cena pode receber pontos para inspeção pre-voo, seguranca no patio e identificacao de componentes.",
-            yaw: 0.7,
-            pitch: 0.08,
+            yaw: 0.68,
+            pitch: 0.11,
             color: "#ee6b6e"
           }
         ],
@@ -79,12 +81,38 @@ const modules = [
       {
         title: "Cabine e painel",
         summary: "Onde o piloto monitora instrumentos e controla a aeronave.",
-        type: "diagram",
+        type: "360",
         diagram: "c172-cockpit",
+        panorama: "assets/panoramas/cessna-172-cockpit-360.png",
+        startYaw: 0.5,
+        startPitch: 0.06,
         checklist: [
           "Localizar manche, manetes, pedais e instrumentos basicos.",
           "Separar instrumentos de voo, motor e navegacao.",
           "Entender que configuracoes variam entre aeronaves e anos."
+        ],
+        hotspots: [
+          {
+            title: "Instrumentos de voo",
+            text: "Incluem velocidade, atitude, altitude, razao de subida, proa e coordenacao. Sao a base da orientacao do piloto.",
+            yaw: 0.42,
+            pitch: 0.04,
+            color: "#40c4a4"
+          },
+          {
+            title: "Manche",
+            text: "Move ailerons e profundor. Puxar tende a elevar o nariz; empurrar tende a baixar.",
+            yaw: 0.41,
+            pitch: 0.18,
+            color: "#f2b84b"
+          },
+          {
+            title: "Manetes",
+            text: "Controlam potencia, mistura e outros ajustes conforme a versao da aeronave.",
+            yaw: 0.51,
+            pitch: 0.12,
+            color: "#ee6b6e"
+          }
         ],
         nodes: [
           {
@@ -113,12 +141,38 @@ const modules = [
       {
         title: "Superficies de comando",
         summary: "Ailerons, profundor e leme.",
-        type: "diagram",
+        type: "360",
         diagram: "c172-controls",
+        panorama: "assets/panoramas/cessna-172-control-surfaces-360.png",
+        startYaw: 0.5,
+        startPitch: 0.02,
         checklist: [
           "Identificar ailerons nas asas.",
           "Identificar profundor na cauda horizontal.",
           "Identificar leme na cauda vertical."
+        ],
+        hotspots: [
+          {
+            title: "Ailerons",
+            text: "Controlam a rolagem. Um sobe enquanto o outro desce, inclinando a aeronave.",
+            yaw: 0.72,
+            pitch: -0.06,
+            color: "#40c4a4"
+          },
+          {
+            title: "Profundor",
+            text: "Controla o movimento de nariz para cima ou para baixo.",
+            yaw: 0.31,
+            pitch: 0.2,
+            color: "#f2b84b"
+          },
+          {
+            title: "Leme",
+            text: "Controla guinada, ajudando a apontar o nariz para esquerda ou direita.",
+            yaw: 0.25,
+            pitch: -0.08,
+            color: "#ee6b6e"
+          }
         ],
         nodes: [
           {
@@ -147,12 +201,38 @@ const modules = [
       {
         title: "Motor e helice",
         summary: "Conjunto de propulsao dianteiro.",
-        type: "diagram",
+        type: "360",
         diagram: "c172-engine",
+        panorama: "assets/panoramas/cessna-172-engine-propeller-360.png",
+        startYaw: 0.5,
+        startPitch: 0.08,
         checklist: [
           "Identificar cowling, helice e entrada de ar.",
           "Associar motor a tracao gerada pela helice.",
           "Observar pontos de inspecao externa antes do voo."
+        ],
+        hotspots: [
+          {
+            title: "Helice",
+            text: "Transforma potencia do motor em tracao. Deve ser inspecionada quanto a trincas, amassados e fixacao.",
+            yaw: 0.5,
+            pitch: 0.03,
+            color: "#40c4a4"
+          },
+          {
+            title: "Cowling",
+            text: "Carenagem do motor. Protege o compartimento e direciona o fluxo de ar.",
+            yaw: 0.5,
+            pitch: 0.1,
+            color: "#f2b84b"
+          },
+          {
+            title: "Entrada de ar",
+            text: "Permite fluxo para arrefecimento e admissao. Deve estar livre de obstrucoes.",
+            yaw: 0.5,
+            pitch: 0.2,
+            color: "#ee6b6e"
+          }
         ],
         nodes: [
           {
@@ -181,12 +261,38 @@ const modules = [
       {
         title: "Trem de pouso",
         summary: "Rodas, bequilha dianteira e estruturas de apoio.",
-        type: "diagram",
+        type: "360",
         diagram: "c172-gear",
+        panorama: "assets/panoramas/cessna-172-landing-gear-360.png",
+        startYaw: 0.5,
+        startPitch: 0.1,
         checklist: [
           "Localizar trem principal e bequilha.",
           "Verificar pneus, fixacoes e estado geral.",
           "Entender diferenca entre trem fixo e retratil."
+        ],
+        hotspots: [
+          {
+            title: "Trem principal",
+            text: "Suporta a maior parte do peso no solo e recebe cargas de pouso.",
+            yaw: 0.9,
+            pitch: 0.12,
+            color: "#40c4a4"
+          },
+          {
+            title: "Bequilha",
+            text: "Roda dianteira usada para apoio e direcao no taxi.",
+            yaw: 0.5,
+            pitch: 0.08,
+            color: "#f2b84b"
+          },
+          {
+            title: "Pneu",
+            text: "Inspecione desgaste, cortes, calibragem aparente e objetos presos.",
+            yaw: 0.5,
+            pitch: 0.16,
+            color: "#ee6b6e"
+          }
         ],
         nodes: [
           {
@@ -291,8 +397,6 @@ const els = {
   checklist: document.querySelector("#checklist"),
   vrBtn: document.querySelector("#vrBtn"),
   fullscreenBtn: document.querySelector("#fullscreenBtn"),
-  mode360Btn: document.querySelector("#mode360Btn"),
-  modeDiagramBtn: document.querySelector("#modeDiagramBtn"),
   gyroBtn: document.querySelector("#gyroBtn"),
   resetViewBtn: document.querySelector("#resetViewBtn")
 };
@@ -361,8 +465,8 @@ function selectStage(index) {
 function selectContent() {
   const content = currentContent();
   activeView = content.type === "diagram" ? "diagram" : "360";
-  yaw = 0.5;
-  pitch = 0;
+  yaw = content.startYaw ?? 0.5;
+  pitch = content.startPitch ?? 0;
   resetSelection();
   renderModuleList();
   renderStageList();
@@ -396,13 +500,11 @@ function resetSelection() {
 function updateHud() {
   const content = currentContent();
   els.activeTitle.textContent = content.title;
-  els.activeMode.textContent = activeView === "360" ? "Imagem 360" : "Desenho interativo";
+  els.activeMode.textContent = activeView === "360" ? "Imagem 360" : "Visual interativo";
   els.activeHint.textContent =
     activeView === "360"
       ? "Arraste ou use o giroscopio para olhar ao redor. Clique nos pontos para interagir."
       : "Clique nos pontos do desenho para abrir instrucoes.";
-  els.mode360Btn.classList.toggle("active", activeView === "360");
-  els.modeDiagramBtn.classList.toggle("active", activeView === "diagram");
   syncVrHud();
 }
 
@@ -837,7 +939,7 @@ function drawMarker(x, y, color, label) {
 
 function projectHotspot(hotspot, x, y, width, height, eyeOffset) {
   const delta = normalizedDelta(hotspot.yaw, yaw + eyeOffset);
-  const pitchDelta = hotspot.pitch - pitch;
+  const pitchDelta = hotspot.pitch - pitch * 0.75;
   const visible = Math.abs(delta) < panoramaViewYawSpan / 2 && Math.abs(pitchDelta) < panoramaViewPitchSpan / 2;
   return {
     x: x + width / 2 + (delta / panoramaViewYawSpan) * width,
@@ -861,12 +963,6 @@ function selectAt(clientX, clientY) {
   els.activeTitle.textContent = target.data.title;
   els.activeHint.textContent = target.data.text;
   syncVrHud();
-}
-
-function setViewMode(mode) {
-  activeView = mode;
-  resetSelection();
-  updateHud();
 }
 
 function toggleVrMode() {
@@ -1064,12 +1160,11 @@ canvas.addEventListener("pointerup", (event) => {
 
 els.vrBtn.addEventListener("click", toggleVrMode);
 els.fullscreenBtn.addEventListener("click", () => document.documentElement.requestFullscreen?.());
-els.mode360Btn.addEventListener("click", () => setViewMode("360"));
-els.modeDiagramBtn.addEventListener("click", () => setViewMode("diagram"));
 els.gyroBtn.addEventListener("click", toggleGyroscope);
 els.resetViewBtn.addEventListener("click", () => {
-  yaw = 0.5;
-  pitch = 0;
+  const content = currentContent();
+  yaw = content.startYaw ?? 0.5;
+  pitch = content.startPitch ?? 0;
   gyroBase = null;
 });
 
