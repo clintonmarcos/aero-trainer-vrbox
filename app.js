@@ -275,22 +275,22 @@ const modules = [
           {
             title: "Trem principal",
             text: "Suporta a maior parte do peso no solo e recebe cargas de pouso.",
-            yaw: 0.9,
-            pitch: 0.12,
+            yaw: 0.88,
+            pitch: 0.14,
             color: "#40c4a4"
           },
           {
             title: "Bequilha",
             text: "Roda dianteira usada para apoio e direcao no taxi.",
             yaw: 0.5,
-            pitch: 0.08,
+            pitch: 0.12,
             color: "#f2b84b"
           },
           {
             title: "Pneu",
             text: "Inspecione desgaste, cortes, calibragem aparente e objetos presos.",
-            yaw: 0.5,
-            pitch: 0.16,
+            yaw: 0.11,
+            pitch: 0.19,
             color: "#ee6b6e"
           }
         ],
@@ -1144,7 +1144,7 @@ canvas.addEventListener("pointermove", (event) => {
   lastPointer = { x: event.clientX, y: event.clientY };
 
   if (activeView === "360") {
-    yaw = wrap01(yaw - dx * 0.0014);
+    yaw = wrap01(yaw + dx * 0.0014);
     pitch = clamp(pitch + dy * 0.0014, -0.34, 0.34);
   }
 });
