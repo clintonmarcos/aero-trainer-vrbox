@@ -414,6 +414,331 @@ Notas:
 2. Aeronaves antigas, modificadas ou com STC podem ter dados diferentes.
 3. Para manutencao real, use somente documentacao aplicavel a matricula/numero de serie da aeronave.`;
 
+const a320TechnicalIndexText = `Indice tecnico - Airbus A320neo
+
+Aviso de uso:
+Este material e uma ficha didatica para treinamento e familiarizacao. Nao substitui Aircraft Maintenance Manual, Aircraft Flight Manual, Flight Crew Operating Manual, Illustrated Parts Catalog, Wiring Manual, Structural Repair Manual, Component Maintenance Manuals, Service Bulletins, Airworthiness Directives, documentacao do operador ou requisitos da autoridade aeronautica aplicavel.
+
+1. Identificacao geral
+2. Configuracao da aeronave
+3. Dimensoes principais
+4. Cabine, portas e capacidade
+5. Pesos de referencia
+6. Combustivel
+7. Desempenho de referencia
+8. Motores e naceles
+9. Sistemas principais
+10. Pontos de manutencao e inspecao
+11. Riscos e cuidados de treinamento
+12. Referencias e limitacoes
+
+Como usar:
+Use esta ficha junto com a visita virtual. Cada secao deve ser relacionada visualmente a um conjunto da aeronave: cockpit, asa, motor, trem de pouso, empenagem e fuselagem.`;
+
+const a320TechnicalSpecsText = `Ficha tecnica didatica - Airbus A320neo
+
+1. Identificacao geral
+
+Tipo:
+Aviao comercial narrow-body, bimotor a jato, asa baixa, corredor unico, trem de pouso retratil triciclo e comando fly-by-wire.
+
+Fabricante:
+Airbus.
+
+Familia:
+A320neo Family. O A320neo e a evolucao do A320ceo, com motores de nova geracao, sharklets e melhorias de eficiencia. A familia inclui variantes como A319neo, A320neo e A321neo.
+
+Uso tipico:
+Transporte comercial de curto e medio alcance, operacao regular, charter, treinamento de companhia, familiarizacao de manutencao e simulacao operacional.
+
+2. Configuracao basica
+
+- Dois motores turbofan sob as asas.
+- Asa baixa enflechada.
+- Sharklets nas pontas das asas em configuracoes modernas.
+- Trem de pouso retratil triciclo.
+- Cabine pressurizada.
+- Cockpit digital com sidesticks.
+- Sistema fly-by-wire.
+- Superficies de comando: ailerons, elevators, rudder, spoilers/speed brakes, flaps e slats.
+- Sistemas hidraulicos, eletricos, pneumaticos, combustivel, pressurizacao, ar condicionado e avionicos integrados.
+
+3. Dimensoes principais de referencia
+
+Comprimento:
+Aproximadamente 37,57 m.
+
+Envergadura:
+Aproximadamente 35,80 m com sharklets.
+
+Altura:
+Aproximadamente 11,76 m.
+
+Largura maxima da fuselagem:
+Aproximadamente 3,95 m.
+
+Largura da cabine:
+Aproximadamente 3,70 m.
+
+Comprimento de cabine:
+Aproximadamente 27,5 m.
+
+4. Capacidade
+
+Tripulacao tecnica:
+2 pilotos.
+
+Capacidade tipica:
+Configuracao variavel por operador. Em alta densidade, pode chegar a aproximadamente 180 passageiros. Em configuracoes de duas classes, e comum ficar abaixo disso.
+
+Portas e saidas:
+Portas de passageiros e servico, saidas sobre as asas e compartimentos de carga, conforme configuracao.
+
+5. Pesos de referencia
+
+Peso maximo de decolagem:
+Tipicamente ate cerca de 79 t em variantes modernas, dependendo da configuracao e certificacao.
+
+Peso maximo de pouso:
+Valor varia por variante e configuracao.
+
+Peso maximo zero combustivel:
+Valor varia por variante e configuracao.
+
+Observacao:
+Pesos operacionais nao devem ser usados genericamente. Em aeronave real, consulte AFM, Weight and Balance Manual, load sheet e documentacao do operador.
+
+6. Combustivel
+
+Combustivel:
+Jet A / Jet A-1, conforme operacao e requisitos locais.
+
+Tanques:
+Tanques nas asas e centro, conforme configuracao da familia A320.
+
+Capacidade de combustivel:
+Valor de referencia da familia A320neo fica na ordem de dezenas de milhares de litros. O valor exato depende de variante e configuracao.
+
+Pontos de treinamento:
+- Abastecimento e aterramento.
+- Drenagem e contaminacao.
+- Respiros e paineis.
+- Bombas e valvulas.
+- Indicacao e gerenciamento de combustivel.
+- Risco de FOD em area de abastecimento.
+
+7. Desempenho de referencia
+
+Alcance:
+O A320neo e divulgado com alcance de aproximadamente 3.500 nm, dependendo da configuracao.
+
+Velocidade de cruzeiro:
+Tipicamente Mach 0.78.
+
+Altitude operacional:
+Operacao em niveis altos de cruzeiro, conforme envelope e planejamento.
+
+Observacao:
+Desempenho depende de peso, temperatura, vento, pista, altitude, motores, configuracao, MEL/CDL, contaminacao e dados oficiais.
+
+8. Motores
+
+Opcoes de motor:
+- Pratt & Whitney PW1100G-JM.
+- CFM International LEAP-1A.
+
+Caracteristicas:
+Motores turbofan de alto bypass, naceles grandes, reversores, fan de grande diametro, FADEC e integracao com sistemas da aeronave.
+
+Pontos visuais:
+- Entrada de ar.
+- Fan blades.
+- Spinner.
+- Nacele.
+- Pylon.
+- Cowls.
+- Reverser.
+- Drenos.
+- Acessos de manutencao.
+
+9. Cockpit e avionicos
+
+Conceito:
+Cockpit Airbus com filosofia de automacao integrada, displays digitais, ECAM, sidesticks, pedestal central e overhead panel.
+
+Itens principais:
+- PFD e ND para cada piloto.
+- ECAM upper/lower display.
+- MCDUs.
+- FCU.
+- Thrust levers.
+- Sidesticks.
+- Pedestal.
+- Overhead panel.
+- Rudder pedals.
+- Circuit breakers e paineis de controle conforme area.
+
+10. Sistemas principais
+
+Fly-by-wire:
+Os comandos dos pilotos sao interpretados por computadores de controle de voo, que comandam superficies por atuadores. O sistema possui leis de controle e protecoes, conforme condicao operacional.
+
+Hidraulico:
+Sistemas hidraulicos independentes alimentam comandos, trem de pouso, freios, reversores e outros consumidores, conforme arquitetura Airbus.
+
+Eletrico:
+Geradores dos motores, APU, baterias, conexao externa e distribuicao por barras.
+
+Pneumatico:
+Sangria dos motores/APU ou fontes externas para partida, pressurizacao, ar condicionado e anti-ice, conforme configuracao.
+
+Trem de pouso:
+Trem retratil triciclo, com bogies principais, nose gear, portas, atuadores, freios, steering e sistemas de indicacao.
+
+Pressurizacao e ar condicionado:
+Controlam altitude de cabine, temperatura, renovacao de ar e conforto dos ocupantes.
+
+Protecao contra gelo:
+Areas criticas incluem entradas de motor, sensores e superficies conforme sistema aplicavel.`;
+
+const a320TechnicalMaintenanceText = `Informacoes para manutencao e treinamento - Airbus A320neo
+
+1. Principio fundamental
+
+O A320neo e uma aeronave comercial complexa. Esta ficha e apenas didatica. Qualquer intervencao real deve seguir a documentacao aprovada da aeronave, procedimentos do operador e requisitos regulatorios.
+
+2. Documentos de referencia em manutencao
+
+- Aircraft Maintenance Manual.
+- Aircraft Wiring Manual.
+- Illustrated Parts Catalog.
+- Structural Repair Manual.
+- Troubleshooting Manual.
+- Component Maintenance Manuals.
+- Aircraft Schematics Manual.
+- Maintenance Planning Document.
+- Service Bulletins.
+- Airworthiness Directives.
+- FCOM/QRH/AFM para contexto operacional.
+- Documentacao especifica de motor PW1100G-JM ou LEAP-1A.
+
+3. Seguranca de patio
+
+Antes de aproximar:
+- Confirmar aeronave segura.
+- Verificar calcos.
+- Respeitar zonas de ingestao e exaustao.
+- Atentar para APU, GPU, ar condicionado externo e veiculos.
+- Usar EPI.
+- Controlar FOD.
+- Manter comunicacao com equipe.
+
+4. Motor e nacele
+
+Riscos:
+Ingestao, superficies quentes, portas de fan cowl, reverser, drenagem, vazamentos e energia armazenada.
+
+Inspecao visual:
+- Fan blades.
+- Spinner.
+- Inlet lip.
+- Nacele.
+- Pylon.
+- Drenos.
+- Paineis e latches.
+- Vazamentos.
+- Danos por FOD.
+- Linhas e conexoes aparentes.
+
+5. Trem de pouso
+
+Pontos:
+- Pneus.
+- Rodas.
+- Freios.
+- Struts.
+- Torque links.
+- Gear doors.
+- Atuadores.
+- Sensores.
+- Linhas hidraulicas.
+- Wheel well.
+- Evidencia de superaquecimento, vazamento, impacto ou desgaste irregular.
+
+6. Asas e superficies
+
+Itens:
+- Slats.
+- Flaps.
+- Ailerons.
+- Spoilers.
+- Sharklets.
+- Bordo de ataque.
+- Bordo de fuga.
+- Paineis de acesso.
+- Drenos.
+- Sinais de impacto, delaminacao, corrosao ou fixadores ausentes.
+
+7. Fuselagem e portas
+
+Itens:
+- Portas de passageiros.
+- Portas de servico.
+- Portas de carga.
+- Selos.
+- Dobradicas e travas.
+- Antenas.
+- Drenos.
+- Paineis.
+- Radome.
+- Janelas.
+- Pintura e danos estruturais aparentes.
+
+8. Cockpit
+
+Familiarizacao:
+- Sidesticks.
+- Pedais.
+- Thrust levers.
+- ECAM.
+- Overhead.
+- Pedestal.
+- FCU.
+- MCDU.
+- Circuit breakers.
+
+Treinamento:
+O objetivo inicial e reconhecer paineis e funcoes, nao operar sistemas sem procedimento. Para manutencao real, siga energizacao, safety procedures e steps do AMM.
+
+9. Sistemas hidraulicos e eletricos
+
+Cuidados:
+Sistemas podem permanecer pressurizados ou energizados. Sempre aplicar procedimentos de desenergizacao, depressurizacao, placards e lockout conforme requerido.
+
+10. Conteudos futuros recomendados
+
+- Walkaround de linha.
+- Inspecao de motor.
+- Inspecao de trem.
+- Identificacao de portas e paineis.
+- Sistema fly-by-wire.
+- ECAM e filosofia Airbus.
+- FOD e seguranca de patio.
+- Comparacao A320ceo x A320neo.
+- Quiz de componentes.
+- Video 360 de turnaround.`;
+
+const a320TechnicalReferenceText = `Referencias usadas para esta ficha - Airbus A320neo
+
+- Airbus: informacoes publicas da familia A320neo.
+- Airbus Aircraft Characteristics Airport and Maintenance Planning: dimensoes e caracteristicas gerais.
+- Informacoes publicas de fabricantes de motores PW1100G-JM e LEAP-1A.
+
+Notas:
+1. Os dados sao de referencia para treinamento.
+2. Variantes, pesos, motores, layout e sistemas podem variar por operador.
+3. Para manutencao real, consulte a documentacao aprovada da aeronave especifica.`;
+
 const modules = [
   {
     id: "cessna-tour",
@@ -740,6 +1065,7 @@ const modules = [
     id: "walkaround",
     title: "Videos VR",
     summary: "Area reservada para videos imersivos.",
+    isSoon: true,
     type: "360",
     introTitle: "Em breve",
     introText: videosVrSoonText,
@@ -755,6 +1081,7 @@ const modules = [
     id: "x5-panorama",
     title: "Informacoes tecnicas",
     summary: "Area reservada para dados tecnicos da aeronave.",
+    isTechnical: true,
     stages: [
       {
         title: "Indice",
@@ -816,12 +1143,309 @@ const modules = [
   }
 ];
 
+const a320Modules = [
+  {
+    id: "a320neo-tour",
+    title: "Visita virtual",
+    summary: "Visita virtual demonstrativa usando um Airbus A320neo.",
+    stages: [
+      {
+        title: "Visao geral do A320neo",
+        summary: "Narrow-body bimotor com motores neo e sharklets.",
+        type: "360",
+        panorama: "assets/panoramas/airbus-a320neo-exterior-360.png",
+        startYaw: 0.5,
+        startPitch: 0.02,
+        checklist: [
+          "Identificar fuselagem, asa baixa, motores e empenagem.",
+          "Localizar sharklets, portas e trem de pouso.",
+          "Entender o A320neo como aeronave comercial de corredor unico."
+        ],
+        hotspots: [
+          {
+            title: "Fuselagem narrow-body",
+            text: "A fuselagem do A320neo e de corredor unico, pressurizada e projetada para transporte comercial de curto e medio alcance.\n\nPara familiarizacao de manutencao, use esta area para localizar portas, janelas, antenas, radome, paineis de acesso, compartimentos de carga e regioes estruturais de maior circulacao operacional.\n\nInspecoes visuais devem observar danos por impacto, corrosao, marcas de veiculos, selos de portas, fixadores, paineis desalinhados e sinais de vazamento ou contaminacao.",
+            yaw: 0.46,
+            pitch: 0.02,
+            color: "#40c4a4"
+          },
+          {
+            title: "Motores neo",
+            text: "O A320neo pode ser equipado com motores Pratt & Whitney PW1100G-JM ou CFM LEAP-1A.\n\nEles sao turbofans modernos de alto bypass, integrados a naceles maiores e mais eficientes. Para treinamento, destaque inlet, fan, pylon, fan cowl, reverser, drenos e areas sujeitas a FOD.\n\nAproximacao ao motor deve respeitar zonas de ingestao, exaustao, superficies quentes e procedimentos de seguranca.",
+            yaw: 0.55,
+            pitch: 0.11,
+            color: "#f2b84b"
+          },
+          {
+            title: "Sharklets",
+            text: "Sharklets sao dispositivos nas pontas das asas que reduzem arrasto induzido e melhoram eficiencia aerodinamica.\n\nEm manutencao, observe danos por impacto, raios, delaminacao, fixacoes, pintura e condicao geral da ponta de asa. A area tambem e relevante para seguranca no patio, pois fica distante do eixo da aeronave e pode ser atingida por equipamentos.",
+            yaw: 0.81,
+            pitch: -0.05,
+            color: "#7db7ff"
+          },
+          {
+            title: "Trem retratil",
+            text: "O A320neo usa trem de pouso retratil triciclo, com nose gear e main landing gears.\n\nAo contrario do Cessna 172, o sistema envolve portas, atuadores, travas, indicacoes, freios de alta energia, steering e wheel wells. Na familiarizacao, associe cada componente visual aos sistemas hidraulico, eletrico e de indicacao.",
+            yaw: 0.37,
+            pitch: 0.18,
+            color: "#ee6b6e"
+          }
+        ]
+      },
+      {
+        title: "Cockpit e painel",
+        summary: "Flight deck Airbus com sidesticks, ECAM e pedestal.",
+        type: "360",
+        panorama: "assets/panoramas/airbus-a320neo-cockpit-360.png",
+        startYaw: 0.5,
+        startPitch: 0.03,
+        checklist: [
+          "Localizar sidesticks, telas, pedestal e overhead.",
+          "Separar areas de voo, sistemas e gerenciamento.",
+          "Entender a filosofia Airbus de automacao e ECAM."
+        ],
+        hotspots: [
+          {
+            title: "Displays de voo",
+            text: "Os displays principais apresentam informacoes de voo, navegacao, motor e sistemas.\n\nNo conceito Airbus, PFD, ND e ECAM organizam a consciencia situacional da tripulacao. Para manutencao, a familiarizacao deve reconhecer telas, paineis, fontes de energia, testes, mensagens e interfaces, sem executar procedimentos fora da documentacao aplicavel.",
+            yaw: 0.43,
+            pitch: 0.1,
+            color: "#40c4a4"
+          },
+          {
+            title: "Sidesticks",
+            text: "O A320neo usa sidesticks laterais em vez de manche central.\n\nOs comandos sao enviados ao sistema fly-by-wire, que interpreta entradas dos pilotos e comanda superficies por computadores e atuadores. Em treinamento, destaque que o sidestick nao tem a mesma relacao mecanica direta de aeronaves convencionais.",
+            yaw: 0.23,
+            pitch: 0.13,
+            color: "#f2b84b"
+          },
+          {
+            title: "Pedestal",
+            text: "O pedestal central concentra thrust levers, MCDUs, radios, transponder, speed brake, flaps e outros controles, conforme configuracao.\n\nPara familiarizacao, esta area ajuda a explicar a diferenca entre comandos de voo, gerenciamento de voo e comandos de sistemas. Qualquer energizacao ou teste real deve seguir AMM/FCOM e procedimentos do operador.",
+            yaw: 0.51,
+            pitch: 0.24,
+            color: "#ee6b6e"
+          },
+          {
+            title: "Overhead panel",
+            text: "O overhead panel concentra controles de sistemas como eletrico, combustivel, pneumatico, ar condicionado, pressurizacao, anti-ice, luzes e APU.\n\nEm treinamento, use o overhead para apresentar a logica de sistemas do Airbus. Em manutencao, ele deve ser tratado com cautela, pois acionar comandos fora de contexto pode energizar sistemas ou alterar configuracoes.",
+            yaw: 0.5,
+            pitch: -0.24,
+            color: "#7db7ff"
+          }
+        ]
+      },
+      {
+        title: "Superficies de comando",
+        summary: "Slats, flaps, ailerons, spoilers, elevators e rudder.",
+        type: "360",
+        panorama: "assets/panoramas/airbus-a320neo-control-surfaces-360.png",
+        startYaw: 0.58,
+        startPitch: 0.04,
+        checklist: [
+          "Identificar superficies primarias e secundarias.",
+          "Localizar flaps, slats, spoilers e sharklets.",
+          "Relacionar comandos ao sistema fly-by-wire."
+        ],
+        hotspots: [
+          {
+            title: "Flaps e slats",
+            text: "Flaps e slats aumentam sustentacao para decolagem e pouso.\n\nNo A320neo, sao sistemas de alta sustentacao comandados e monitorados por sistemas dedicados. Para manutencao, observe trilhos, carenagens, paineis, vazamentos, danos, folgas e assimetrias aparentes. Nao permanecer em areas de movimento durante testes.",
+            yaw: 0.68,
+            pitch: 0.12,
+            color: "#40c4a4"
+          },
+          {
+            title: "Spoilers",
+            text: "Spoilers auxiliam em roll control, speed brake e ground spoiler, conforme fase de voo e logica de sistema.\n\nNa familiarizacao visual, localize os paineis superiores da asa. Em manutencao, sao areas criticas por envolver atuadores, hidraulica, comandos automatizados e risco de movimento inesperado durante testes.",
+            yaw: 0.66,
+            pitch: 0.04,
+            color: "#f2b84b"
+          },
+          {
+            title: "Empenagem",
+            text: "A empenagem contem estabilizador vertical, rudder, estabilizador horizontal e elevators.\n\nEssas superficies participam do controle direcional e longitudinal. Em treinamento, relacione cada superficie ao eixo de movimento da aeronave. Em inspecao, observe danos, raios, bordos, hinges, paineis e atuadores aparentes.",
+            yaw: 0.25,
+            pitch: -0.12,
+            color: "#ee6b6e"
+          },
+          {
+            title: "Sharklet",
+            text: "O sharklet fica na ponta da asa e melhora eficiencia reduzindo vortices de ponta.\n\nPara manutencao, e uma area sensivel a impacto em solo e danos por raio. Deve ser avaliado visualmente quanto a trincas, amassados, delaminacao, fixacao e pintura.",
+            yaw: 0.93,
+            pitch: -0.05,
+            color: "#7db7ff"
+          }
+        ]
+      },
+      {
+        title: "Motor e nacele",
+        summary: "Turbofan, inlet, fan, pylon e reverser.",
+        type: "360",
+        panorama: "assets/panoramas/airbus-a320neo-engine-360.png",
+        startYaw: 0.48,
+        startPitch: 0.06,
+        checklist: [
+          "Identificar inlet, fan, pylon e cowls.",
+          "Observar zonas de seguranca ao redor do motor.",
+          "Relacionar motor a sistemas eletrico, hidraulico e pneumatico."
+        ],
+        hotspots: [
+          {
+            title: "Fan e inlet",
+            text: "A entrada de ar e o fan sao areas criticas em motores turbofan.\n\nInspecione visualmente inlet lip, fan blades, spinner, sinais de FOD, erosao, danos, contaminacao e vazamentos. A aproximacao ao motor exige atencao a zonas de ingestao e procedimentos de seguranca, mesmo em treinamento.",
+            yaw: 0.47,
+            pitch: 0.04,
+            color: "#40c4a4"
+          },
+          {
+            title: "Nacele",
+            text: "A nacele envolve e direciona o fluxo ao redor do motor, abrigando cowls, acessos, reverser e sistemas associados.\n\nPontos de manutencao incluem latches, dobradicas, paineis, drenagem, danos por calor, vazamentos e alinhamento. Fan cowl doors mal fechadas sao risco serio em operacao.",
+            yaw: 0.5,
+            pitch: 0.08,
+            color: "#f2b84b"
+          },
+          {
+            title: "Pylon",
+            text: "O pylon conecta o motor a asa e conduz interfaces estruturais, eletricas, hidraulicas, combustivel e controle.\n\nEm familiarizacao, destaque que o pylon nao e apenas suporte: ele integra sistemas essenciais. Inspecao visual deve observar paineis, vazamentos, fixacoes, danos e evidencias de vibracao.",
+            yaw: 0.41,
+            pitch: -0.06,
+            color: "#7db7ff"
+          },
+          {
+            title: "Reverser",
+            text: "O reversor de empuxo ajuda a reduzir a velocidade apos pouso, conforme limites e procedimentos.\n\nEm manutencao, envolve atuadores, travas, indicacoes e paineis. A area exige procedimentos de seguranca para evitar movimento inesperado e garantir configuracao correta antes de retorno ao servico.",
+            yaw: 0.39,
+            pitch: 0.03,
+            color: "#ee6b6e"
+          }
+        ]
+      },
+      {
+        title: "Trem de pouso",
+        summary: "Nose gear, main gear, freios, portas e wheel wells.",
+        type: "360",
+        panorama: "assets/panoramas/airbus-a320neo-landing-gear-360.png",
+        startYaw: 0.5,
+        startPitch: 0.12,
+        checklist: [
+          "Identificar nose gear e main landing gear.",
+          "Localizar freios, pneus, struts e portas.",
+          "Observar riscos hidraulicos e areas de esmagamento."
+        ],
+        hotspots: [
+          {
+            title: "Nose landing gear",
+            text: "O nose gear apoia a parte frontal e participa do steering no solo.\n\nPontos de treinamento incluem pneus, rodas, torque links, strut, portas, atuadores, sensores e conexoes. Atencao a areas de esmagamento e ao risco durante testes de steering ou retracao.",
+            yaw: 0.18,
+            pitch: 0.11,
+            color: "#40c4a4"
+          },
+          {
+            title: "Main landing gear",
+            text: "Os trens principais suportam a maior parte das cargas de pouso, taxi e frenagem.\n\nObserve pneus, rodas, brake assemblies, struts, portas, uplocks/downlocks, linhas hidraulicas e wheel wells. Sinais de vazamento, superaquecimento, desgaste ou dano estrutural exigem avaliacao tecnica.",
+            yaw: 0.5,
+            pitch: 0.14,
+            color: "#f2b84b"
+          },
+          {
+            title: "Freios",
+            text: "Os freios do A320neo operam em ambiente de alta energia e podem permanecer quentes apos pouso.\n\nTreinamento deve abordar indicacoes de temperatura, desgaste, vazamentos, riscos de aproximacao e procedimentos de seguranca. Nao tocar componentes sem confirmar condicao segura.",
+            yaw: 0.52,
+            pitch: 0.21,
+            color: "#ee6b6e"
+          },
+          {
+            title: "Gear doors",
+            text: "As portas do trem reduzem arrasto e protegem wheel wells, mas tambem criam areas de risco durante testes.\n\nEm manutencao, verificar danos, dobradicas, atuadores, alinhamento, folgas e interferencias. Procedimentos de seguranca sao essenciais antes de qualquer operacao do trem.",
+            yaw: 0.46,
+            pitch: -0.13,
+            color: "#7db7ff"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "a320neo-videos",
+    title: "Videos VR",
+    summary: "Area reservada para videos imersivos.",
+    isSoon: true,
+    type: "360",
+    introTitle: "Em breve",
+    introText: videosVrSoonText,
+    checklist: [
+      "Em breve.",
+      "Futuro suporte a video 360 do YouTube.",
+      "Area reservada para aulas imersivas em video."
+    ],
+    panorama: "",
+    hotspots: []
+  },
+  {
+    id: "a320neo-tech",
+    title: "Informacoes tecnicas",
+    summary: "Ficha tecnica e manutencao do Airbus A320neo.",
+    isTechnical: true,
+    stages: [
+      {
+        title: "Indice",
+        summary: "Mapa da ficha tecnica.",
+        type: "360",
+        introTitle: "Indice tecnico",
+        introText: a320TechnicalIndexText,
+        checklist: ["Ler o aviso de uso.", "Identificar as secoes.", "Relacionar ficha e visita virtual."],
+        panorama: "",
+        hotspots: []
+      },
+      {
+        title: "Ficha tecnica",
+        summary: "Dados gerais, dimensoes, desempenho e sistemas.",
+        type: "360",
+        introTitle: "Ficha tecnica completa",
+        introText: a320TechnicalSpecsText,
+        checklist: ["Revisar configuracao geral.", "Revisar motores e sistemas.", "Associar dados aos componentes visuais."],
+        panorama: "",
+        hotspots: []
+      },
+      {
+        title: "Manutencao",
+        summary: "Pontos de inspecao e instrucao tecnica.",
+        type: "360",
+        introTitle: "Informacoes para manutencao",
+        introText: a320TechnicalMaintenanceText,
+        checklist: ["Usar documentos oficiais.", "Identificar areas criticas.", "Separar treinamento de liberacao real."],
+        panorama: "",
+        hotspots: []
+      },
+      {
+        title: "Referencias",
+        summary: "Fontes e notas de uso.",
+        type: "360",
+        introTitle: "Referencias e notas",
+        introText: a320TechnicalReferenceText,
+        checklist: ["Confirmar que os dados sao de referencia.", "Consultar documentacao aprovada.", "Atualizar dados por aeronave real."],
+        panorama: "",
+        hotspots: []
+      }
+    ]
+  }
+];
+
 const aircrafts = [
   {
     id: "cessna-172",
     title: "Cessna 172",
     summary: "Aeronave leve de asa alta para treinamento e aviacao geral.",
+    homePanorama: "assets/panoramas/cessna-172-apron-360.png",
     modules
+  },
+  {
+    id: "airbus-a320neo",
+    title: "Airbus A320neo",
+    summary: "Jato comercial narrow-body bimotor com sistemas Airbus fly-by-wire.",
+    homePanorama: "assets/panoramas/airbus-a320neo-exterior-360.png",
+    modules: a320Modules
   }
 ];
 
@@ -882,11 +1506,11 @@ function currentContent() {
 }
 
 function isTechnicalContent(content = currentContent()) {
-  return activeModule.id === "x5-panorama" && Boolean(content.introText);
+  return Boolean(activeModule.isTechnical && content.introText);
 }
 
 function isSoonContent(content = currentContent()) {
-  return activeModule.id === "walkaround";
+  return Boolean(activeModule.isSoon);
 }
 
 function renderAircraftList() {
@@ -1045,7 +1669,7 @@ function updateTechnicalMode() {
 function loadPanorama() {
   const content = currentContent();
   panoramaImage = null;
-  const panoramaPath = content.panorama || (isTechnicalContent(content) || isSoonContent(content) ? "assets/panoramas/cessna-172-apron-360.png" : "");
+  const panoramaPath = content.panorama || (isTechnicalContent(content) || isSoonContent(content) ? activeAircraft?.homePanorama || "assets/panoramas/cessna-172-apron-360.png" : "");
   if (!panoramaPath) return;
 
   const image = new Image();

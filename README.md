@@ -84,22 +84,6 @@ Cada ponto usa coordenadas normalizadas:
 
 `yaw` vai de `0` a `1` ao redor da imagem. `pitch` controla altura: valores negativos ficam mais acima, positivos mais abaixo.
 
-## Desenhos interativos
-
-Os desenhos atuais são gerados no canvas como exemplo. Para criar uma etapa nova, adicione um módulo com `type: "diagram"` e pontos em `nodes`:
-
-```js
-{
-  title: "Bomba",
-  text: "Instrucao da peca.",
-  x: 0.5,
-  y: 0.58,
-  color: "#f2b84b"
-}
-```
-
-`x` e `y` também vão de `0` a `1`, relativos à largura e altura da tela.
-
 ## Permissões necessárias
 
 No telefone, normalmente basta permitir:
@@ -123,15 +107,19 @@ Ele possui etapas:
 - Motor e helice
 - Trem de pouso
 
-As imagens atuais sao desenhadas no canvas para evitar dependencia de imagens externas ou direitos de uso. Para transformar em material realista, voce pode substituir cada etapa por uma foto 360 da sua Insta360 X5, uma foto plana, um desenho tecnico ou uma arte gerada especificamente para treinamento.
+As cenas atuais usam panoramas 360 gerados para o projeto. Para transformar em material real, voce pode substituir cada etapa por uma foto 360 da sua Insta360 X5 ou por uma arte gerada especificamente para treinamento.
 
 A primeira etapa tambem usa um panorama 360 gerado para o projeto:
 
 ```text
 assets/panoramas/cessna-172-apron-360.png
+assets/panoramas/cessna-172-cockpit-360.png
+assets/panoramas/cessna-172-control-surfaces-360.png
+assets/panoramas/cessna-172-engine-propeller-360.png
+assets/panoramas/cessna-172-landing-gear-360.png
 ```
 
-Esse arquivo e usado como cena demonstrativa realista. Depois voce pode substituir por um panorama capturado com a Insta360 X5.
+Esses arquivos sao usados como cenas demonstrativas realistas. Depois voce pode substituir por panoramas capturados com a Insta360 X5.
 
 No `app.js`, a estrutura fica em:
 
