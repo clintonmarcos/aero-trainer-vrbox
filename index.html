@@ -15,6 +15,10 @@
           <h1>Aero Trainer VR Box</h1>
         </div>
         <div class="topbar-actions">
+          <a href="./viewer360.html" class="ghost-button" style="display:inline-flex;align-items:center;gap:6px;text-decoration:none;" title="Abrir visualizador 360° livre">
+            <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+            Visualizador 360°
+          </a>
           <button id="fullscreenBtn" class="icon-button" type="button" title="Tela cheia" aria-label="Tela cheia">
             <span aria-hidden="true">[]</span>
           </button>
@@ -53,6 +57,11 @@
           <div id="viewer" class="viewer">
             <canvas id="sceneCanvas"></canvas>
             <div id="reticle" class="reticle" aria-hidden="true"></div>
+            <div id="vrRotateHint" class="vr-rotate-hint" aria-live="polite">
+              <div class="vr-rotate-hint-icon">📱</div>
+              <strong>Gire o iPhone para paisagem</strong>
+              <small>Segure o celular deitado para a melhor experiência no VR Box</small>
+            </div>
             <div id="hud" class="hud">
               <p id="activeMode">Imagem 360</p>
               <h2 id="activeTitle">Selecione uma aeronave</h2>

@@ -2287,6 +2287,17 @@ function enterVrMode() {
   screen.orientation?.lock?.("landscape").catch(() => {});
   armVrHistory();
   startGyroscope();
+  showVrRotateHint();
+}
+
+function showVrRotateHint() {
+  const isMobile = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+  if (!isMobile) return;
+  const hint = document.getElementById("vrRotateHint");
+  if (!hint) return;
+  hint.classList.add("visible");
+  clearTimeout(hint._hideTimer);
+  hint._hideTimer = setTimeout(() => hint.classList.remove("visible"), 3500);
 }
 
 function exitVrMode(options = {}) {
