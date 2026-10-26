@@ -237,6 +237,20 @@
       .btn-primary { background: var(--accent); color: #071210; font-weight: 800; border-color: var(--accent); }
       .btn-primary:hover { filter: brightness(1.08); }
 
+      /* ── VR iPhone rotation hint ── */
+      #rotateHint {
+        position: fixed; inset: 0; z-index: 9999;
+        display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+        background: rgba(9,11,13,0.9); backdrop-filter: blur(14px);
+        pointer-events: none; opacity: 0; transition: opacity 0.3s;
+      }
+      #rotateHint.visible { opacity: 1; }
+      #rotateHint .hint-icon { font-size: 2.8rem; animation: hintSpin 1.5s ease-in-out infinite; }
+      @keyframes hintSpin { 0%,40%,100%{transform:rotate(0deg)} 70%{transform:rotate(90deg)} }
+      #rotateHint strong { font-size: 1.05rem; text-align: center; }
+      #rotateHint small { color: var(--muted); font-size: 0.82rem; text-align: center; padding: 0 32px; line-height: 1.45; }
+      #viewerWrap { height: 100dvh; }
+
       @media (max-width: 640px) {
         .brand { display: none; }
         .tab { padding: 0 12px; font-size: 0.88rem; }
@@ -281,6 +295,12 @@
             <path stroke-linecap="round" d="M8 12.5a4 4 0 008 0M9 9h.01M15 9h.01"/>
           </svg>
           <p><strong>Nenhuma foto selecionada</strong>Selecione uma aeronave e clique em uma foto abaixo,<br>ou abra uma nova imagem 360°.</p>
+        </div>
+
+        <div id="rotateHint" aria-live="polite">
+          <div class="hint-icon">📱</div>
+          <strong>Gire o iPhone para paisagem</strong>
+          <small>Segure o celular deitado para a melhor experiência no giroscópio</small>
         </div>
 
         <div id="loading" class="hidden">
@@ -536,14 +556,25 @@
         });
       }
 
+      function showRotateHint() {
+        const isMobile = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+        if (!isMobile) return;
+        const hint = document.getElementById("rotateHint");
+        if (!hint) return;
+        hint.classList.add("visible");
+        clearTimeout(hint._t);
+        hint._t = setTimeout(() => hint.classList.remove("visible"), 3500);
+      }
+
       function requestGyro() {
         if (typeof DeviceOrientationEvent !== "undefined" &&
             typeof DeviceOrientationEvent.requestPermission === "function") {
           DeviceOrientationEvent.requestPermission()
-            .then(p => { if (p === "granted") setGyro(true); })
+            .then(p => { if (p === "granted") { setGyro(true); showRotateHint(); } })
             .catch(() => alert("Permissão negada para giroscópio."));
         } else {
           setGyro(true);
+          showRotateHint();
         }
       }
 
